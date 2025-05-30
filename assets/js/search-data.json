@@ -1,7 +1,7 @@
 {"0": {
     "doc": "Home",
     "title": "Have fun with Unity",
-    "content": "Just the Docs gives your documentation a jumpstart with a responsive Jekyll theme that is easily customizable and hosted on GitHub Pages. Get started . View source code . | TOC | . ",
+    "content": "This Unity Poser project allows users to pose a pose in 3D space and AI generate a photo according to the pose. Get started View source code . | Have fun with Unity . | Getting started . | Requirements | Installation | Setup Code Editor | . | Open Your First Scene | Explore further | . | . ",
     "url": "/miko-unity-docs/#have-fun-with-unity",
     
     "relUrl": "/#have-fun-with-unity"
