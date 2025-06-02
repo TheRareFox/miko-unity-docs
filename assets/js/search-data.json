@@ -1,9 +1,51 @@
 {"0": {
     "doc": "Home",
+    "title": "Have fun with Unity",
+    "content": "This Unity Poser project allows users to pose a pose in 3D space and AI generate pictures based to the pose. Get started View source code . | Have fun with Unity . | Getting started . | Requirements | Installation | Setup Code Editor | . | Open Your First Scene | Explore further | . | . ",
+    "url": "/miko-unity-docs/#have-fun-with-unity",
+    
+    "relUrl": "/#have-fun-with-unity"
+  },"1": {
+    "doc": "Home",
+    "title": "Getting started",
+    "content": "If you are already familiar with Unity and installed the project, skip to here: . Requirements . | Unity Editor + Unity 2022.3.45f1 | Visual Studio Code (or your preferred C# code editor) | . Installation . | Clone or download the project: git clone https://github.com/MikoWorld/miko-unity . a. This repo is private. Please request access from JiYao or other employees for access . | Add the project to Unity . a.In Unity Hub, click Add project . b. Select the folder: miko-unity/UnityProject . | Install required packages . a.Open the Unity Editor . b. Go to Window → Package Manager . c. Install any missing dependencies listed under “In Project” . | . Setup Code Editor . | Ensure you have Visual Studio Code or its equivalent . | Setting up Recommended Settings in VSCode . a. Create a JSON file at .vscode/settings.json . b. Copy and paste these necessary settings so that unnecessary files are hidden . | . { \"files.exclude\": { \"**/.DS_Store\": true, \"**/.git\": true, \"**/.gitmodules\": true, \"**/_.booproj\": true, \"**/_.pidb\": true, \"**/*.suo\": true, \"**/_.user\": true, \"**/_.userprefs\": true, \"**/*.unityproj\": true, \"**/_.dll\": true, \"**/_.exe\": true, \"**/*.pdf\": true, \"**/_.mid\": true, \"**/_.midi\": true, \"**/*.wav\": true, \"**/_.gif\": true, \"**/_.ico\": true, \"**/*.jpg\": true, \"**/_.jpeg\": true, \"**/_.png\": true, \"**/*.psd\": true, \"**/_.tga\": true, \"**/_.tif\": true, \"**/*.tiff\": true, \"**/_.3ds\": true, \"**/_.3DS\": true, \"**/*.fbx\": true, \"**/_.FBX\": true, \"**/_.lxo\": true, \"**/*.LXO\": true, \"**/_.ma\": true, \"**/_.MA\": true, \"**/*.obj\": true, \"**/_.OBJ\": true, \"**/_.asset\": true, \"**/*.cubemap\": true, \"**/_.flare\": true, \"**/_.mat\": true, \"**/*.meta\": true, \"**/_.prefab\": true, \"**/_.unity\": true, \"build/\": true, \"Build/\": true, \"Builds/iOS/\": true, \"Library/\": true, \"library/\": true, \"obj/\": true, \"Obj/\": true, \"ProjectSettings/\": true, \"temp/\": true, \"Temp/\": true }, \"dotnet.defaultSolution\": \"UnityProject.sln\", \"C_Cpp.errorSquiggles\": \"disabled\" } . | Setting up recommended automatic file styler in VSCode . a. Install the C# Extension in VSCode . b. Add this to your .vscode/settings.json: . | . { \"editor.formatOnSave\": true, \"[csharp]\": { \"editor.defaultFormatter\": \"ms-dotnettools.csharp\" } } . ",
+    "url": "/miko-unity-docs/#getting-started",
+    
+    "relUrl": "/#getting-started"
+  },"2": {
+    "doc": "Home",
+    "title": "Open Your First Scene",
+    "content": "Open and Test Run Scene . | Open the Unity Project inside Unity . | It should look something like this. Check the scene to make sure you have loaded the Main LoadAll Scene. You can change the scene by going into Assets/Scenes and double clicking on LoadAll . | Click the play button at the top once the scene is loaded. | Now the scene is loaded and you can move the body! . | . ",
+    "url": "/miko-unity-docs/#open-your-first-scene",
+    
+    "relUrl": "/#open-your-first-scene"
+  },"3": {
+    "doc": "Home",
+    "title": "Explore further",
+    "content": "You may wanna look at these: . ",
+    "url": "/miko-unity-docs/#explore-further",
+    
+    "relUrl": "/#explore-further"
+  },"4": {
+    "doc": "Home",
     "title": "Home",
-    "content": "Doing a test Ze Hao does a test This is a bare-minimum template to create a Jekyll site that uses the Just the Docs theme. You can easily set the created site to be published on GitHub Pages – the README file explains how to do that, along with other details. If Jekyll is installed on your computer, you can also build and preview the created site locally. This lets you test changes before committing them, and avoids waiting for GitHub Pages.1 And you will be able to deploy your local build to a different platform than GitHub Pages. More specifically, the created site: . | uses a gem-based approach, i.e. uses a Gemfile and loads the just-the-docs gem | uses the GitHub Pages / Actions workflow to build and publish the site on GitHub Pages | . Other than that, you’re free to customize sites that you create with this template, however you like. You can easily change the versions of just-the-docs and Jekyll it uses, as well as adding further plugins. Browse our documentation to learn more about how to use this theme. To get started with creating a site, simply: . | click “use this template” to create a GitHub repository | go to Settings &gt; Pages &gt; Build and deployment &gt; Source, and select GitHub Actions | . If you want to maintain your docs in the docs directory of an existing project repo, see Hosting your docs from an existing project repo in the template README. | It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub. &#8617; . | . ",
+    "content": " ",
     "url": "/miko-unity-docs/",
     
     "relUrl": "/"
+  },"5": {
+    "doc": "Overview of File Structure and Scene",
+    "title": "Overview",
+    "content": "This is an introduction to the file structure and the current working scene LoadAll . ",
+    "url": "/miko-unity-docs/docs/overview/#overview",
+    
+    "relUrl": "/docs/overview/#overview"
+  },"6": {
+    "doc": "Overview of File Structure and Scene",
+    "title": "Overview of File Structure and Scene",
+    "content": " ",
+    "url": "/miko-unity-docs/docs/overview/",
+    
+    "relUrl": "/docs/overview/"
   }
 }
