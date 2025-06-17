@@ -29,7 +29,7 @@
   },"4": {
     "doc": "Class - AddFBXController",
     "title": "Public Methods",
-    "content": ". | void Awake() Initializes references from scene hierarchy and sets up static references for indicator visuals. | . void setFBX(GameObject fbx) Sets the FBX prefab to be loaded when AddFBX() is called. void AddFBX() Instantiates the FBX model, clears previous model data, configures rigging and joint targets, assigns dependencies, and begins drawing the pose structure. ",
+    "content": ". | void Awake() Initializes references from scene hierarchy and sets up static references for indicator visuals. | void setFBX(GameObject fbx) Sets the FBX prefab to be loaded when AddFBX() is called. | void AddFBX() Instantiates the FBX model, clears previous model data, configures rigging and joint targets, assigns dependencies, and begins drawing the pose structure. | . ",
     "url": "/miko-unity-docs/docs/classes/scene_initalisation/AddFBXController/#public-methods",
     
     "relUrl": "/docs/classes/scene_initalisation/AddFBXController/#public-methods"
@@ -64,35 +64,35 @@
   },"9": {
     "doc": "Class - AdjustModel",
     "title": "Table of Contents",
-    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
+    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods . | void Initalise() | void UpdateInitialJointPositionsForScaling() | void ScaleArm(float val) | void ScaleHands(float val) | void ScaleFeet(float val) | void ScaleHip(float val) | void ScaleShoulders(float val) | void ScaleLegs(float val) | void ScaleTorso(float val) | void ScaleHeight(float val) | void ScaleThickness(float val) | void ScaleHeadWidth(float val) | void ScaleNeck(float val) | void ApplyAllScalingToPosekun() | void ResetShoulderHips() | Vector3 GetSpinePosition() | Vector3 GetHipsPosition() | Vector3 GetUpdatedSpineIndicatorPosition() | . | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/posekun_modifications/AdjustModel/#table-of-contents",
     
     "relUrl": "/docs/classes/posekun_modifications/AdjustModel/#table-of-contents"
   },"10": {
     "doc": "Class - AdjustModel",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "AdjustModel manages dynamic scaling and adjustment of the body model (posekun/bodykun). It modifies limb proportions, height, width, and relative joint positioning based on user input or saved pose data. Used to personalize or match a body pose to specific proportions. File Location . Assets/Scripts/utils/AdjustModel.cs . ",
     "url": "/miko-unity-docs/docs/classes/posekun_modifications/AdjustModel/#description",
     
     "relUrl": "/docs/classes/posekun_modifications/AdjustModel/#description"
   },"11": {
     "doc": "Class - AdjustModel",
     "title": "Serialized Fields",
-    "content": " ",
+    "content": "| Name | Type | Description | . | rb | RigBuilder | Reference to the RigBuilder to temporarily disable rig updates during adjustments. | . | leftArm, rightArm, leftLeg, rightLeg, hips, spine, root, leftHand, rightHand, head, leftFoot, rightFoot, neck | Transform | References to the key joints and body parts used for scaling and repositioning. | . ",
     "url": "/miko-unity-docs/docs/classes/posekun_modifications/AdjustModel/#serialized-fields",
     
     "relUrl": "/docs/classes/posekun_modifications/AdjustModel/#serialized-fields"
   },"12": {
     "doc": "Class - AdjustModel",
     "title": "Public Methods",
-    "content": " ",
+    "content": "void Initalise() . Links internal joint references to actual GameObjects from the scene using the Structure.jointGameObjects mapping. void UpdateInitialJointPositionsForScaling() . Stores the initial arm and leg positions used to calculate offsets during scaling. void ScaleArm(float val) . Scales both upper arms. Disables rigging temporarily for transformation. void ScaleHands(float val) . Scales both hands. void ScaleFeet(float val) . Scales both feet. void ScaleHip(float val) . Horizontally moves legs outward/inward to simulate wider/narrower hips. void ScaleShoulders(float val) . Horizontally moves arms outward/inward to simulate wider/narrower shoulders. void ScaleLegs(float val) . Scales both upper legs. void ScaleTorso(float val) . Scales hips and spine equally. Updates internal joint position references. void ScaleHeight(float val) . Vertically scales torso (Y or Z depending on camera orientation). void ScaleThickness(float val) . Horizontally scales hips and spine. void ScaleHeadWidth(float val) . Scales neck slightly and offsets it to preserve visual integrity. void ScaleNeck(float val) . Scales the neck down and the head up to simulate a proportional neck. void ApplyAllScalingToPosekun() . Applies all available scaling adjustments using stored values from RootBehavior.state. void ResetShoulderHips() . Resets arm and leg joint positions to original locations before scaling started. Vector3 GetSpinePosition() . Returns the midpoint between left and right arms. Vector3 GetHipsPosition() . Returns midpoint between legs, slightly adjusted upward. Vector3 GetUpdatedSpineIndicatorPosition() . Returns average of arm and leg positions to estimate spine indicator center. ",
     "url": "/miko-unity-docs/docs/classes/posekun_modifications/AdjustModel/#public-methods",
     
     "relUrl": "/docs/classes/posekun_modifications/AdjustModel/#public-methods"
   },"13": {
     "doc": "Class - AdjustModel",
     "title": "Usage Notes",
-    "content": " ",
+    "content": ". | Intended for runtime use with UI sliders to let users resize/manipulate the character model. | Automatically disables RigBuilder before applying transformations to avoid conflicts. | Should be initialized before performing any scale operations. | Use in conjunction with BodykunController, Structure, and JointConnectedTo. | . ",
     "url": "/miko-unity-docs/docs/classes/posekun_modifications/AdjustModel/#usage-notes",
     
     "relUrl": "/docs/classes/posekun_modifications/AdjustModel/#usage-notes"
@@ -757,35 +757,35 @@
   },"108": {
     "doc": "Class - IKJointRestriction",
     "title": "Table of Contents",
-    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
+    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods . | void Initalise((ShapeType, float, int, Vector3, JointConnectedTo) settings) | void LateUpdate() | void OnDrawGizmosSelected() | . | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/IKJointRestriction/#table-of-contents",
     
     "relUrl": "/docs/classes/joint_restrictions/IKJointRestriction/#table-of-contents"
   },"109": {
     "doc": "Class - IKJointRestriction",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "IK Joint Restriction is DEPRECATED because we cannot get the mesh to maintain while restricting movement . IKJointRestriction enforces inverse kinematics (IK)-based movement constraints on joints by limiting them to either inside a cone (Cone) or outside a reversed cone (ReversedCone). It supports debug visualization and special finger-based controls. File Location . Assets\\Scripts\\PoseLoader\\Joints\\JointRestrictions\\IKJointRestriction.cs . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/IKJointRestriction/#description",
     
     "relUrl": "/docs/classes/joint_restrictions/IKJointRestriction/#description"
   },"110": {
     "doc": "Class - IKJointRestriction",
     "title": "Serialized Fields",
-    "content": " ",
+    "content": "| Name | Type | Description |———————-|—————|—————————————————————————–| enabled | bool | Whether the restriction is active. | shapeType | ShapeType | Restriction shape (Cone or ReversedCone). | target | Transform | Target transform used as cone apex or origin. | offset | Vector3 | Positional offset from the target. | debugGizmos | bool | Whether to display restriction gizmos. | coneHeight | float | Height of the restriction cone. | coneAngle | float | Angle of the cone in degrees. | coneAxis | Vector3 | Directional axis for the cone (default is forward). | useYAxisCone | bool | Use Y-axis of target or hand to determine cone axis. | isFingers | bool | Whether this restriction is on a finger joint. | isAtEdge | bool | True if joint is close to restriction edge. | fingerOffsetDistance | float | Distance offset from the hand to place the finger constraint point. | hand | Transform | Reference transform of the hand. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/IKJointRestriction/#serialized-fields",
     
     "relUrl": "/docs/classes/joint_restrictions/IKJointRestriction/#serialized-fields"
   },"111": {
     "doc": "Class - IKJointRestriction",
     "title": "Public Methods",
-    "content": " ",
+    "content": "void Initalise((ShapeType, float, int, Vector3, JointConnectedTo) settings) . Initializes the restriction parameters using a tuple: . | ShapeType - The shape of the cone. | float height - Height of the cone. | int angle - Cone angle in degrees. | Vector3 offset - Offset from the target. | JointConnectedTo target - Enum representing the target joint. | . void LateUpdate() . Applies restriction every frame based on shapeType. void OnDrawGizmosSelected() . Draws gizmos for debugging the cone and restricted positions. ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/IKJointRestriction/#public-methods",
     
     "relUrl": "/docs/classes/joint_restrictions/IKJointRestriction/#public-methods"
   },"112": {
     "doc": "Class - IKJointRestriction",
     "title": "Usage Notes",
-    "content": " ",
+    "content": ". | Use this component when restricting IK targets such as hands and feet. | Can be configured in JointRestrictionLimits.IKJointSettings. | For fingers, ensure isFingers is true and hand is assigned. | Automatically initialized by JointRestrictionManager during scene startup. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/IKJointRestriction/#usage-notes",
     
     "relUrl": "/docs/classes/joint_restrictions/IKJointRestriction/#usage-notes"
@@ -813,28 +813,28 @@
   },"116": {
     "doc": "Class - JointLoader",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "The JointLoader is added to joints (GameObjects) that can be manipulated. It only has one purpose: On awake, it sets up the Sphere collider, SetTarget, JointManager and SwiftControls. It also tags the finger joints. File Location . Assets\\Scripts\\PoseLoader\\Joints\\JointLoader.cs . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointLoader/#description",
     
     "relUrl": "/docs/classes/joint_structure/JointLoader/#description"
   },"117": {
     "doc": "Class - JointLoader",
     "title": "Serialized Fields",
-    "content": " ",
+    "content": "| Name | Type | Description | . | indicatorPrefab | GameObject | Prefab used as the visual indicator for joints. | . | canvas | GameObject | Reference to the UI canvas where joint indicators are drawn. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointLoader/#serialized-fields",
     
     "relUrl": "/docs/classes/joint_structure/JointLoader/#serialized-fields"
   },"118": {
     "doc": "Class - JointLoader",
     "title": "Public Methods",
-    "content": " ",
+    "content": "None . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointLoader/#public-methods",
     
     "relUrl": "/docs/classes/joint_structure/JointLoader/#public-methods"
   },"119": {
     "doc": "Class - JointLoader",
     "title": "Usage Notes",
-    "content": " ",
+    "content": ". | This script should be attached to every joint GameObject. | Automatically determines joint type by parsing the GameObject name. | Avoids re-adding components if they already exist. | Distinguishes finger joints and IK-controlled joints using helper sets from the Structure class. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointLoader/#usage-notes",
     
     "relUrl": "/docs/classes/joint_structure/JointLoader/#usage-notes"
@@ -855,1292 +855,1299 @@
   },"122": {
     "doc": "Class - JointManager",
     "title": "Table of Contents",
-    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
+    "content": ". | Description . | File Location | . | Serialized Fields | Static Fields | Public Methods | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointManager/#table-of-contents",
     
     "relUrl": "/docs/classes/joint_structure/JointManager/#table-of-contents"
   },"123": {
     "doc": "Class - JointManager",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "This class maintains connectedJoint and v2_jointToDrawTo for the joint it is attached to, and two static lists bodykunJoints and posekunJoints. connectedJoint: The Posekun visual joint of the parent of this joint. File Location . Assets\\Scripts\\PoseLoader\\Joints\\JointManager.cs . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointManager/#description",
     
     "relUrl": "/docs/classes/joint_structure/JointManager/#description"
   },"124": {
     "doc": "Class - JointManager",
     "title": "Serialized Fields",
-    "content": " ",
+    "content": "| Name | Type | Description |——|——|————-| connectedJoint | GameObject | Reference to another joint this joint is visually connected to. | v2_jointToDrawTo | JointConnectedTo | Specifies which joint this joint should draw a visual line to in the new Posekun system. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointManager/#serialized-fields",
     
     "relUrl": "/docs/classes/joint_structure/JointManager/#serialized-fields"
   },"125": {
     "doc": "Class - JointManager",
+    "title": "Static Fields",
+    "content": "| Name | Type | Description | . | bodykunJoints | List | List of all active joints belonging to the Bodykun model. | . | posekunJoints | List | List of all joints currently used for the Posekun visualization. | . ",
+    "url": "/miko-unity-docs/docs/classes/joint_structure/JointManager/#static-fields",
+    
+    "relUrl": "/docs/classes/joint_structure/JointManager/#static-fields"
+  },"126": {
+    "doc": "Class - JointManager",
     "title": "Public Methods",
-    "content": " ",
+    "content": "None . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointManager/#public-methods",
     
     "relUrl": "/docs/classes/joint_structure/JointManager/#public-methods"
-  },"126": {
+  },"127": {
     "doc": "Class - JointManager",
     "title": "Usage Notes",
-    "content": " ",
+    "content": ". | Used by both Bodykun and Posekun systems to track and manage joint instances in the scene. | Ensures no duplicate joint entries are present in either static list. | Essential for visual line rendering in the newer Posekun version via v2_jointToDrawTo. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointManager/#usage-notes",
     
     "relUrl": "/docs/classes/joint_structure/JointManager/#usage-notes"
-  },"127": {
+  },"128": {
     "doc": "Class - JointManager",
     "title": "Class - JointManager",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/JointManager/",
     
     "relUrl": "/docs/classes/joint_structure/JointManager/"
-  },"128": {
+  },"129": {
     "doc": "Class - JointRestrictionLimits",
     "title": "JointRestrictionLimits",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionLimits/#jointrestrictionlimits",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionLimits/#jointrestrictionlimits"
-  },"129": {
+  },"130": {
     "doc": "Class - JointRestrictionLimits",
     "title": "Table of Contents",
     "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionLimits/#table-of-contents",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionLimits/#table-of-contents"
-  },"130": {
+  },"131": {
     "doc": "Class - JointRestrictionLimits",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "JointRestrictionLimits contains two dictionaries for storing the rotation and IK restrictions that should exist. Note: IK Joint Restrictions are not in use right now as we are still fixing the implementation bugs. File Location . Assets\\Scripts\\PoseLoader\\Joints\\JointRestrictions\\JointRestrictionLimits.cs . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionLimits/#description",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionLimits/#description"
-  },"131": {
+  },"132": {
     "doc": "Class - JointRestrictionLimits",
     "title": "Serialized Fields",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionLimits/#serialized-fields",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionLimits/#serialized-fields"
-  },"132": {
+  },"133": {
     "doc": "Class - JointRestrictionLimits",
     "title": "Public Methods",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionLimits/#public-methods",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionLimits/#public-methods"
-  },"133": {
+  },"134": {
     "doc": "Class - JointRestrictionLimits",
     "title": "Usage Notes",
-    "content": " ",
+    "content": ". | This class does not need to be attached to any GameObject. | Add rotation into rotationLimits to make it automatically attach a RotationJointRestriction and restrict joints. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionLimits/#usage-notes",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionLimits/#usage-notes"
-  },"134": {
+  },"135": {
     "doc": "Class - JointRestrictionLimits",
     "title": "Class - JointRestrictionLimits",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionLimits/",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionLimits/"
-  },"135": {
+  },"136": {
     "doc": "Class - JointRestrictionManager",
     "title": "JointRestrictionManager",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionManager/#jointrestrictionmanager",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionManager/#jointrestrictionmanager"
-  },"136": {
+  },"137": {
     "doc": "Class - JointRestrictionManager",
     "title": "Table of Contents",
-    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
+    "content": ". | Description . | File Location | . | Public Static Fields | Public Methods . | void ToggleJointRestriction(string toggle) | void DisableAllJointRestrictions() | void EnableAllJointRestrictions() | static void SetOriginalAngles() | . | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionManager/#table-of-contents",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionManager/#table-of-contents"
-  },"137": {
+  },"138": {
     "doc": "Class - JointRestrictionManager",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "This class is a singleton. JointRestrictionManager sets up and manages the joint restrictions, including enabling and disabling them. File Location . Assets\\Scripts\\PoseLoader\\Joints\\JointRestrictions\\JointRestrictionManager.cs . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionManager/#description",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionManager/#description"
-  },"138": {
-    "doc": "Class - JointRestrictionManager",
-    "title": "Serialized Fields",
-    "content": " ",
-    "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionManager/#serialized-fields",
-    
-    "relUrl": "/docs/classes/joint_restrictions/JointRestrictionManager/#serialized-fields"
   },"139": {
     "doc": "Class - JointRestrictionManager",
+    "title": "Public Static Fields",
+    "content": "| Name | Type | Description | . | instance | JointRestrictionManager | Singleton instance of the manager. | . | restrictionEnabled | bool | Tracks whether joint restrictions are currently active. | . ",
+    "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionManager/#public-static-fields",
+    
+    "relUrl": "/docs/classes/joint_restrictions/JointRestrictionManager/#public-static-fields"
+  },"140": {
+    "doc": "Class - JointRestrictionManager",
     "title": "Public Methods",
-    "content": " ",
+    "content": "void ToggleJointRestriction(string toggle) . Toggles the global restriction state based on a toggle input string (\"0\" to disable, \"1\" to enable, or toggle current state). void DisableAllJointRestrictions() . Disables all attached RotationJointRestriction components. void EnableAllJointRestrictions() . Enables all attached RotationJointRestriction components. static void SetOriginalAngles() . Stores the current joint angles as the new “original” reference for rotational clamping. ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionManager/#public-methods",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionManager/#public-methods"
-  },"140": {
+  },"141": {
     "doc": "Class - JointRestrictionManager",
     "title": "Usage Notes",
-    "content": " ",
+    "content": ". | This manager is required for ensuring realistic joint behavior in both FK and IK systems. | Toggling can be triggered externally via UI elements or keybinds calling ToggleJointRestriction. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionManager/#usage-notes",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionManager/#usage-notes"
-  },"141": {
+  },"142": {
     "doc": "Class - JointRestrictionManager",
     "title": "Class - JointRestrictionManager",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/JointRestrictionManager/",
     
     "relUrl": "/docs/classes/joint_restrictions/JointRestrictionManager/"
-  },"142": {
+  },"143": {
     "doc": "Class - OpenHandEditor",
     "title": "OpenHandEditor",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/hand_editor/OpenHandEditor/#openhandeditor",
     
     "relUrl": "/docs/classes/hand_editor/OpenHandEditor/#openhandeditor"
-  },"143": {
+  },"144": {
     "doc": "Class - OpenHandEditor",
     "title": "Table of Contents",
     "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/hand_editor/OpenHandEditor/#table-of-contents",
     
     "relUrl": "/docs/classes/hand_editor/OpenHandEditor/#table-of-contents"
-  },"144": {
+  },"145": {
     "doc": "Class - OpenHandEditor",
     "title": "Description",
     "content": "File Location . ",
     "url": "/miko-unity-docs/docs/classes/hand_editor/OpenHandEditor/#description",
     
     "relUrl": "/docs/classes/hand_editor/OpenHandEditor/#description"
-  },"145": {
+  },"146": {
     "doc": "Class - OpenHandEditor",
     "title": "Serialized Fields",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/hand_editor/OpenHandEditor/#serialized-fields",
     
     "relUrl": "/docs/classes/hand_editor/OpenHandEditor/#serialized-fields"
-  },"146": {
+  },"147": {
     "doc": "Class - OpenHandEditor",
     "title": "Public Methods",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/hand_editor/OpenHandEditor/#public-methods",
     
     "relUrl": "/docs/classes/hand_editor/OpenHandEditor/#public-methods"
-  },"147": {
+  },"148": {
     "doc": "Class - OpenHandEditor",
     "title": "Usage Notes",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/hand_editor/OpenHandEditor/#usage-notes",
     
     "relUrl": "/docs/classes/hand_editor/OpenHandEditor/#usage-notes"
-  },"148": {
+  },"149": {
     "doc": "Class - OpenHandEditor",
     "title": "Class - OpenHandEditor",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/hand_editor/OpenHandEditor/",
     
     "relUrl": "/docs/classes/hand_editor/OpenHandEditor/"
-  },"149": {
+  },"150": {
     "doc": "Class - PoseBoundingBox",
     "title": "PoseBoundingBox",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/PoseBoundingBox/#poseboundingbox",
     
     "relUrl": "/docs/classes/camera_movement/PoseBoundingBox/#poseboundingbox"
-  },"150": {
+  },"151": {
     "doc": "Class - PoseBoundingBox",
     "title": "Table of Contents",
     "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/PoseBoundingBox/#table-of-contents",
     
     "relUrl": "/docs/classes/camera_movement/PoseBoundingBox/#table-of-contents"
-  },"151": {
+  },"152": {
     "doc": "Class - PoseBoundingBox",
     "title": "Description",
     "content": "File Location . ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/PoseBoundingBox/#description",
     
     "relUrl": "/docs/classes/camera_movement/PoseBoundingBox/#description"
-  },"152": {
+  },"153": {
     "doc": "Class - PoseBoundingBox",
     "title": "Serialized Fields",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/PoseBoundingBox/#serialized-fields",
     
     "relUrl": "/docs/classes/camera_movement/PoseBoundingBox/#serialized-fields"
-  },"153": {
+  },"154": {
     "doc": "Class - PoseBoundingBox",
     "title": "Public Methods",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/PoseBoundingBox/#public-methods",
     
     "relUrl": "/docs/classes/camera_movement/PoseBoundingBox/#public-methods"
-  },"154": {
+  },"155": {
     "doc": "Class - PoseBoundingBox",
     "title": "Usage Notes",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/PoseBoundingBox/#usage-notes",
     
     "relUrl": "/docs/classes/camera_movement/PoseBoundingBox/#usage-notes"
-  },"155": {
+  },"156": {
     "doc": "Class - PoseBoundingBox",
     "title": "Class - PoseBoundingBox",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/PoseBoundingBox/",
     
     "relUrl": "/docs/classes/camera_movement/PoseBoundingBox/"
-  },"156": {
+  },"157": {
     "doc": "Class - RotationJointRestriction",
     "title": "RotationJointRestriction",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/RotationJointRestriction/#rotationjointrestriction",
     
     "relUrl": "/docs/classes/joint_restrictions/RotationJointRestriction/#rotationjointrestriction"
-  },"157": {
+  },"158": {
     "doc": "Class - RotationJointRestriction",
     "title": "Table of Contents",
-    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
+    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods . | void Initalise((Vector3 minAngles, Vector3 maxAngles) limits) | void SetOriginalAngles() | . | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/RotationJointRestriction/#table-of-contents",
     
     "relUrl": "/docs/classes/joint_restrictions/RotationJointRestriction/#table-of-contents"
-  },"158": {
+  },"159": {
     "doc": "Class - RotationJointRestriction",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "RotationJointRestriction clamps a joint’s rotation within specified angular bounds in local Euler space. It ensures that joints do not rotate beyond natural anatomical limits during interaction or IK-driven transformations. File Location . Assets\\Scripts\\PoseLoader\\Joints\\JointRestrictions\\RotationJointRestriction.cs . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/RotationJointRestriction/#description",
     
     "relUrl": "/docs/classes/joint_restrictions/RotationJointRestriction/#description"
-  },"159": {
+  },"160": {
     "doc": "Class - RotationJointRestriction",
     "title": "Serialized Fields",
-    "content": " ",
+    "content": "| Name | Type | Description |——|——|————-| xLowerLimit | float | Minimum allowed rotation (in degrees) on the X-axis. Set to 0 to disable. | xUpperLimit | float | Maximum allowed rotation (in degrees) on the X-axis. Set to 0 to disable. | yLowerLimit | float | Minimum allowed rotation on the Y-axis. | yUpperLimit | float | Maximum allowed rotation on the Y-axis. | zLowerLimit | float | Minimum allowed rotation on the Z-axis. | zUpperLimit | float | Maximum allowed rotation on the Z-axis. | . These are exposed in the editor during playtesting, but are set using the Initalise() function below at runtime. These values are exposed in the editor during playtesting, so developers can easily edit and test them to find the best values for each joint. ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/RotationJointRestriction/#serialized-fields",
     
     "relUrl": "/docs/classes/joint_restrictions/RotationJointRestriction/#serialized-fields"
-  },"160": {
+  },"161": {
     "doc": "Class - RotationJointRestriction",
     "title": "Public Methods",
-    "content": " ",
+    "content": "void Initalise((Vector3 minAngles, Vector3 maxAngles) limits) . Initializes the rotation limits from a tuple of minAngles and maxAngles. void SetOriginalAngles() . Saves the current rotation of the transform as the new base for delta clamping. ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/RotationJointRestriction/#public-methods",
     
     "relUrl": "/docs/classes/joint_restrictions/RotationJointRestriction/#public-methods"
-  },"161": {
+  },"162": {
     "doc": "Class - RotationJointRestriction",
     "title": "Usage Notes",
-    "content": " ",
+    "content": ". | Attach this component to joints that should have limited rotational movement. | Limits are relative to the originalAngles at startup or when SetOriginalAngles() is called. | Used by the JointRestrictionManager to programmatically enforce anatomical constraints. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/RotationJointRestriction/#usage-notes",
     
     "relUrl": "/docs/classes/joint_restrictions/RotationJointRestriction/#usage-notes"
-  },"162": {
+  },"163": {
     "doc": "Class - RotationJointRestriction",
     "title": "Class - RotationJointRestriction",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/RotationJointRestriction/",
     
     "relUrl": "/docs/classes/joint_restrictions/RotationJointRestriction/"
-  },"163": {
+  },"164": {
     "doc": "Class - ScreenshotController",
     "title": "ScreenshotController",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/ScreenshotController/#screenshotcontroller",
     
     "relUrl": "/docs/classes/camera_movement/ScreenshotController/#screenshotcontroller"
-  },"164": {
+  },"165": {
     "doc": "Class - ScreenshotController",
     "title": "Table of Contents",
     "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/ScreenshotController/#table-of-contents",
     
     "relUrl": "/docs/classes/camera_movement/ScreenshotController/#table-of-contents"
-  },"165": {
+  },"166": {
     "doc": "Class - ScreenshotController",
     "title": "Description",
     "content": "File Location . ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/ScreenshotController/#description",
     
     "relUrl": "/docs/classes/camera_movement/ScreenshotController/#description"
-  },"166": {
+  },"167": {
     "doc": "Class - ScreenshotController",
     "title": "Serialized Fields",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/ScreenshotController/#serialized-fields",
     
     "relUrl": "/docs/classes/camera_movement/ScreenshotController/#serialized-fields"
-  },"167": {
+  },"168": {
     "doc": "Class - ScreenshotController",
     "title": "Public Methods",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/ScreenshotController/#public-methods",
     
     "relUrl": "/docs/classes/camera_movement/ScreenshotController/#public-methods"
-  },"168": {
+  },"169": {
     "doc": "Class - ScreenshotController",
     "title": "Usage Notes",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/ScreenshotController/#usage-notes",
     
     "relUrl": "/docs/classes/camera_movement/ScreenshotController/#usage-notes"
-  },"169": {
+  },"170": {
     "doc": "Class - ScreenshotController",
     "title": "Class - ScreenshotController",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/ScreenshotController/",
     
     "relUrl": "/docs/classes/camera_movement/ScreenshotController/"
-  },"170": {
+  },"171": {
     "doc": "Class - SetTarget",
     "title": "SetTarget",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/SetTarget/#settarget",
     
     "relUrl": "/docs/classes/rotation_gizmo/SetTarget/#settarget"
-  },"171": {
+  },"172": {
     "doc": "Class - SetTarget",
     "title": "Table of Contents",
     "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Private Methods | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/SetTarget/#table-of-contents",
     
     "relUrl": "/docs/classes/rotation_gizmo/SetTarget/#table-of-contents"
-  },"172": {
+  },"173": {
     "doc": "Class - SetTarget",
     "title": "Description",
     "content": "SetTarget is included with all the joints that can be rotated in FK by the user. It is used to get the current target for the rotation gizmo. It is also used to manage the selected joint indicator. imageIndicator: UI indicator to inform users of the selected joint. File Location . Assets/Scripts/PoseLoader/Joints/SetTarget.cs . ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/SetTarget/#description",
     
     "relUrl": "/docs/classes/rotation_gizmo/SetTarget/#description"
-  },"173": {
+  },"174": {
     "doc": "Class - SetTarget",
     "title": "Serialized Fields",
     "content": "| Name | Type | Description |————————-|————-|—————————————————————————–| rb | RigBuilder | Reference to the rig builder that can be temporarily disabled during interaction. | gameObjectToModifyInstead | GameObject | Target object that will receive gizmo interactions instead of the one this script is attached to. | visualisation | GameObject | Optional prefab used to create a visual representation of the joint. | . ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/SetTarget/#serialized-fields",
     
     "relUrl": "/docs/classes/rotation_gizmo/SetTarget/#serialized-fields"
-  },"174": {
+  },"175": {
     "doc": "Class - SetTarget",
     "title": "Public Methods",
     "content": "void Start() . Initializes the joint indicator reference and calls CreateAdditionalJointIndicators() if a visualisation prefab is set. void OnMouseDown() . OnMouseDown is called when the user presses the left mouse button while over the Collider. | Set the imageIndicator to blue and enable it (making it visible). | Set DragJoint.currentJoint = null (as we do not want to drag anything). | Disable RigBuilder (disable IK). | . static void HideIndicator() . Hides the indicator for the currently selected joint. static void UpdateIndicatorPos(Camera cam) . If there is a current DragJoint.currentJoint, make the image indicator red and have it follow the screen position of the joint being dragged. ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/SetTarget/#public-methods",
     
     "relUrl": "/docs/classes/rotation_gizmo/SetTarget/#public-methods"
-  },"175": {
+  },"176": {
     "doc": "Class - SetTarget",
     "title": "Private Methods",
     "content": "void CreateAdditionalJointIndicators() . Used to create the additional 4 joint indicators for use with the rotation gizmo (2 hands, spine and hip) . | Cyan for fingers . | Gray for hips . | Orange for spine . | Magenta for others . | . ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/SetTarget/#private-methods",
     
     "relUrl": "/docs/classes/rotation_gizmo/SetTarget/#private-methods"
-  },"176": {
+  },"177": {
     "doc": "Class - SetTarget",
     "title": "Usage Notes",
     "content": ". | This script is used in conjunction with DragJoint, DrawPosekun, and a skeleton rig. | Joint indicators improve visual feedback and selection clarity during joint manipulation. | Ensure the indicator GameObject with a UI.Image component exists in the scene and is named correctly. | . ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/SetTarget/#usage-notes",
     
     "relUrl": "/docs/classes/rotation_gizmo/SetTarget/#usage-notes"
-  },"177": {
+  },"178": {
     "doc": "Class - SetTarget",
     "title": "Class - SetTarget",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/SetTarget/",
     
     "relUrl": "/docs/classes/rotation_gizmo/SetTarget/"
-  },"178": {
+  },"179": {
     "doc": "Class - StoreOriginalJointForIndicators",
     "title": "StoreOriginalJointForIndicators",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#storeoriginaljointforindicators",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#storeoriginaljointforindicators"
-  },"179": {
+  },"180": {
     "doc": "Class - StoreOriginalJointForIndicators",
     "title": "Table of Contents",
     "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#table-of-contents",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#table-of-contents"
-  },"180": {
+  },"181": {
     "doc": "Class - StoreOriginalJointForIndicators",
     "title": "Description",
     "content": "File Location . ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#description",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#description"
-  },"181": {
+  },"182": {
     "doc": "Class - StoreOriginalJointForIndicators",
     "title": "Serialized Fields",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#serialized-fields",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#serialized-fields"
-  },"182": {
+  },"183": {
     "doc": "Class - StoreOriginalJointForIndicators",
     "title": "Public Methods",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#public-methods",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#public-methods"
-  },"183": {
+  },"184": {
     "doc": "Class - StoreOriginalJointForIndicators",
     "title": "Usage Notes",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#usage-notes",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/#usage-notes"
-  },"184": {
+  },"185": {
     "doc": "Class - StoreOriginalJointForIndicators",
     "title": "Class - StoreOriginalJointForIndicators",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/StoreOriginalJointForIndicators/"
-  },"185": {
+  },"186": {
     "doc": "Class - Structure",
     "title": "Structure",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/Structure/#structure",
     
     "relUrl": "/docs/classes/joint_structure/Structure/#structure"
-  },"186": {
+  },"187": {
     "doc": "Class - Structure",
     "title": "Table of Contents",
-    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
+    "content": ". | Description . | File Location | . | Key Static Fields | Public Methods . | public static void setFBXStructure(GameObject fbx) | private static void setJoints(GameObject child) | . | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/Structure/#table-of-contents",
     
     "relUrl": "/docs/classes/joint_structure/Structure/#table-of-contents"
-  },"187": {
+  },"188": {
     "doc": "Class - Structure",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "The Structure class is responsible for mapping, organizing, and accessing joints in the imported FBX model for both runtime and editing purposes. It links joint names from the model to Unity-recognized identifiers using the JointConnectedTo enum. The JointConnectedTo enum defines every relevant joint or landmark within the FBX skeleton hierarchy used in Posekun and Bodykun. File Location . Assets\\Scripts\\utils\\Structure.cs . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/Structure/#description",
     
     "relUrl": "/docs/classes/joint_structure/Structure/#description"
-  },"188": {
-    "doc": "Class - Structure",
-    "title": "Serialized Fields",
-    "content": " ",
-    "url": "/miko-unity-docs/docs/classes/joint_structure/Structure/#serialized-fields",
-    
-    "relUrl": "/docs/classes/joint_structure/Structure/#serialized-fields"
   },"189": {
     "doc": "Class - Structure",
+    "title": "Key Static Fields",
+    "content": "| Name | Type | Description |——|——|————-| jointGameObjects | Dictionary&lt;JointConnectedTo, GameObject&gt; | Maps each enum joint to its corresponding GameObject in the FBX. | jointNames | Dictionary&lt;string, JointConnectedTo&gt; | Maps string-based FBX joint names to their enum counterpart. | jointConnections | Dictionary&lt;JointConnectedTo, JointConnectedTo&gt; | Maps joints to the joints they visually connect to (line rendering). | jointParents | Dictionary&lt;JointConnectedTo, JointConnectedTo&gt; | Maps each joint to its logical parent in the hierarchy. | jointSavingOrder | List | Ordered list of joints used during pose saving/export. | isFinger | HashSet | Marks joints that represent fingers for special treatment in UI &amp; logic. | . ",
+    "url": "/miko-unity-docs/docs/classes/joint_structure/Structure/#key-static-fields",
+    
+    "relUrl": "/docs/classes/joint_structure/Structure/#key-static-fields"
+  },"190": {
+    "doc": "Class - Structure",
     "title": "Public Methods",
-    "content": " ",
+    "content": "public static void setFBXStructure(GameObject fbx) . Recursively traverses the FBX hierarchy and maps joints to the appropriate enum using name matching and tagging. Adds JointLoader and JointManager components to relevant GameObjects. private static void setJoints(GameObject child) . Handles manual mapping for uniquely named or non-standard joints (e.g., names like \"首\", \"頭\"). Helps complete the mapping from FBX structure to JointConnectedTo. ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/Structure/#public-methods",
     
     "relUrl": "/docs/classes/joint_structure/Structure/#public-methods"
-  },"190": {
+  },"191": {
     "doc": "Class - Structure",
     "title": "Usage Notes",
-    "content": " ",
+    "content": ". | Used extensively across Posekun to simplify joint referencing and enforce consistency. | Can be used to build new Posekun-compatible FBX models if naming conventions and mappings are preserved. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/Structure/#usage-notes",
     
     "relUrl": "/docs/classes/joint_structure/Structure/#usage-notes"
-  },"191": {
+  },"192": {
     "doc": "Class - Structure",
     "title": "Class - Structure",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/Structure/",
     
     "relUrl": "/docs/classes/joint_structure/Structure/"
-  },"192": {
+  },"193": {
     "doc": "Class - SwiftControls",
     "title": "SwiftControls",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/SwiftControls/#swiftcontrols",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/SwiftControls/#swiftcontrols"
-  },"193": {
+  },"194": {
     "doc": "Class - SwiftControls",
     "title": "Table of Contents",
     "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/SwiftControls/#table-of-contents",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/SwiftControls/#table-of-contents"
-  },"194": {
+  },"195": {
     "doc": "Class - SwiftControls",
     "title": "Description",
     "content": "File Location . ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/SwiftControls/#description",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/SwiftControls/#description"
-  },"195": {
+  },"196": {
     "doc": "Class - SwiftControls",
     "title": "Serialized Fields",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/SwiftControls/#serialized-fields",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/SwiftControls/#serialized-fields"
-  },"196": {
+  },"197": {
     "doc": "Class - SwiftControls",
     "title": "Public Methods",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/SwiftControls/#public-methods",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/SwiftControls/#public-methods"
-  },"197": {
+  },"198": {
     "doc": "Class - SwiftControls",
     "title": "Usage Notes",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/SwiftControls/#usage-notes",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/SwiftControls/#usage-notes"
-  },"198": {
+  },"199": {
     "doc": "Class - SwiftControls",
     "title": "Class - SwiftControls",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/SwiftControls/",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/SwiftControls/"
-  },"199": {
+  },"200": {
     "doc": "Class - TransformGizmo",
     "title": "TransformGizmo",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/TransformGizmo/#transformgizmo",
     
     "relUrl": "/docs/classes/rotation_gizmo/TransformGizmo/#transformgizmo"
-  },"200": {
+  },"201": {
     "doc": "Class - TransformGizmo",
     "title": "Table of Contents",
     "content": ". | Description . | File Location | . | TransformGizmo.cs Modifications | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/TransformGizmo/#table-of-contents",
     
     "relUrl": "/docs/classes/rotation_gizmo/TransformGizmo/#table-of-contents"
-  },"201": {
+  },"202": {
     "doc": "Class - TransformGizmo",
     "title": "Description",
     "content": "TransformGizmo is placed on the MainCamera gameObject in the scene, in order for it to work. There are some modifications made to TransformGizmo.cs for this project, which will be highlighted here. File Location . Assets/RuntimeGizmo/TransformGizmo.cs . ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/TransformGizmo/#description",
     
     "relUrl": "/docs/classes/rotation_gizmo/TransformGizmo/#description"
-  },"202": {
+  },"203": {
     "doc": "Class - TransformGizmo",
     "title": "TransformGizmo.cs Modifications",
     "content": "Adding currentIKJointRestriction . This is added for the joint restrictions system to work. All references to this are modifications to the original TransformGizmo code. void GetTarget() . Modify this part so that if the gameObjectToModifyInstead of SetTarget is not null: . | The target will be the Transform of the gameObjectToModifyInstead, and | . ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/TransformGizmo/#transformgizmocs-modifications",
     
     "relUrl": "/docs/classes/rotation_gizmo/TransformGizmo/#transformgizmocs-modifications"
-  },"203": {
+  },"204": {
     "doc": "Class - TransformGizmo",
     "title": "Usage Notes",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/TransformGizmo/#usage-notes",
     
     "relUrl": "/docs/classes/rotation_gizmo/TransformGizmo/#usage-notes"
-  },"204": {
+  },"205": {
     "doc": "Class - TransformGizmo",
     "title": "Class - TransformGizmo",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/TransformGizmo/",
     
     "relUrl": "/docs/classes/rotation_gizmo/TransformGizmo/"
-  },"205": {
+  },"206": {
     "doc": "Class - UpdateHintPositions",
     "title": "UpdateHintPositions",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#updatehintpositions",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#updatehintpositions"
-  },"206": {
+  },"207": {
     "doc": "Class - UpdateHintPositions",
     "title": "Table of Contents",
     "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#table-of-contents",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#table-of-contents"
-  },"207": {
+  },"208": {
     "doc": "Class - UpdateHintPositions",
     "title": "Description",
     "content": "File Location . ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#description",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#description"
-  },"208": {
+  },"209": {
     "doc": "Class - UpdateHintPositions",
     "title": "Serialized Fields",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#serialized-fields",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#serialized-fields"
-  },"209": {
+  },"210": {
     "doc": "Class - UpdateHintPositions",
     "title": "Public Methods",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#public-methods",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#public-methods"
-  },"210": {
+  },"211": {
     "doc": "Class - UpdateHintPositions",
     "title": "Usage Notes",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#usage-notes",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#usage-notes"
-  },"211": {
+  },"212": {
     "doc": "Class - UpdateHintPositions",
     "title": "Class - UpdateHintPositions",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/"
-  },"212": {
+  },"213": {
     "doc": "Blinking Indicators",
     "title": "Blinking Indicators",
     "content": "Visual feedback system that highlights active joints and provides user interaction cues. ",
     "url": "/miko-unity-docs/docs/Topics/blinking_indicators/",
     
     "relUrl": "/docs/Topics/blinking_indicators/"
-  },"213": {
+  },"214": {
     "doc": "Blinking Indicators",
     "title": "Overview",
     "content": "Blinking Joint Indicators are these indicators that flash to indicate which joints can be moved. | Yellow Joint -&gt; Can be moved by Transform Gizmo | Red Joint -&gt; Can be moved by IK | . For each interactable joint, the SwiftControls component is added to it. SwiftControls.cs contains an event listener which will create an indicator and give it a certain color (yellow: rotation gizmo joint, red: IK joint). | Joint Type: used to differentiate the joint type to determine the color for the indicators . | Rotation: Rotation Gizmo joint | Drag: IK joint | . | Indicator Prefab: prefab object containing StoreOriginalJointForIndicators component . | StoreOriginalJointForIndicators stores a reference to the original joint for the current indicator so that the position of the indicator can be updated if necessary. | . | Canvas (UI): reference to the UI object to add our indicators under | Fingers: check this boolean, if the current joint is a finger joint In the current scene, the ShowAllMoveableJoint GameObject is mapped to RootWebGL.BlinkIndicators, allowing you to view this effect when toggling the checkbox for testing purposes. | . Related Classes Class: SwiftControls.cs Class: StoreOriginalJointForIndicators Class: RootWebGL . ",
     "url": "/miko-unity-docs/docs/Topics/blinking_indicators/#overview",
     
     "relUrl": "/docs/Topics/blinking_indicators/#overview"
-  },"214": {
+  },"215": {
     "doc": "Camera Movement",
     "title": "Camera Movement",
     "content": "Understanding the camera control system for navigating around the 3D pose character. ",
     "url": "/miko-unity-docs/docs/Topics/camera_movement/",
     
     "relUrl": "/docs/Topics/camera_movement/"
-  },"215": {
+  },"216": {
     "doc": "Camera Movement",
     "title": "Table of Contents",
     "content": ". | Overview | Related Classes | . ",
     "url": "/miko-unity-docs/docs/Topics/camera_movement/#table-of-contents",
     
     "relUrl": "/docs/Topics/camera_movement/#table-of-contents"
-  },"216": {
+  },"217": {
     "doc": "Camera Movement",
     "title": "Overview",
     "content": "The camera in the scene is an orthographic camera that can Pan, Rotate and Zoom. The controls are: . | Pan: Right Mouse Button + drag | Rotate: Left Mouse Button + drag on empty space | Zoom: Scroll | . Within the scene, the cameraParent, mainCamera and PosekunCamera GameObjects are set up as such. Only mainCamera and PosekunCamera have the actual Camera components. Note that: . | The CameraController and PoseBoundingBox (unused) scripts are on cameraParent | The TransformGizmo (rotation gizmo for FK) script is on mainCamera. Class: TransformGizmo | . ",
     "url": "/miko-unity-docs/docs/Topics/camera_movement/#overview",
     
     "relUrl": "/docs/Topics/camera_movement/#overview"
-  },"217": {
+  },"218": {
     "doc": "Camera Movement",
     "title": "Related Classes",
     "content": "Class: CameraController Class: PoseBoundingBox Class: GridController Class: EnableCamera Class: ScreenshotController . ",
     "url": "/miko-unity-docs/docs/Topics/camera_movement/#related-classes",
     
     "relUrl": "/docs/Topics/camera_movement/#related-classes"
-  },"218": {
+  },"219": {
     "doc": "Deployment Guide",
     "title": "Deployment Guide",
     "content": "Learn how to build and deploy the Unity project for WebGL and iOS platforms. ",
     "url": "/miko-unity-docs/docs/deployment/",
     
     "relUrl": "/docs/deployment/"
-  },"219": {
+  },"220": {
     "doc": "Deployment Guide",
     "title": "Table of Contents",
     "content": ". | WebGL Deployment . | Build Configuration | Testing Build | Web Integration | . | iOS Deployment . | Unity Build Setup | Xcode Integration | Common Issues | . | . ",
     "url": "/miko-unity-docs/docs/deployment/#table-of-contents",
     
     "relUrl": "/docs/deployment/#table-of-contents"
-  },"220": {
+  },"221": {
     "doc": "Deployment Guide",
     "title": "WebGL Deployment",
     "content": "Build Configuration . | Open Build Settings . Navigate to File &gt; Build Settings in Unity Editor. | Configure WebGL Settings . Ensure the following settings are configured: . | Platform: Select WebGL tab | Scenes: Only LoadAll scene should be checked | Code Optimization: . | Use Shorter Build Time for testing | Use Disk Size with LTO for production deployment | . | . | . Testing Build . | Development Testing . Set Code Optimization to Shorter Build Time, then go to File &gt; Build and Run to test in a simulated online environment. | Production Build . After testing, change Code Optimization to Disk Size with LTO and build the Unity project to Builds/WebGL/ folder. | . Web Integration . | Deploy to Web Application . Copy all built files from the Unity WebGL build output to your web application: . Source: UnityProject/Builds/WebGL/ Destination: mikomiko-next-app/public/WebGL/ . | Test Deployment . Run the website locally to verify your changes: . npm run build . | . | Use Disk Size with LTO for production builds to minimize file size | Test with Shorter Build Time during development for faster iteration | . ",
     "url": "/miko-unity-docs/docs/deployment/#webgl-deployment",
     
     "relUrl": "/docs/deployment/#webgl-deployment"
-  },"221": {
+  },"222": {
     "doc": "Deployment Guide",
     "title": "iOS Deployment",
     "content": "Unity Build Setup . | Configure iOS Platform . | Go to File &gt; Build Settings | Switch Platform from WebGL to iOS | Build the Unity project and save to Builds/iOS/ folder | . | . Xcode Integration . | Open Xcode Project . Launch mikodemo.xcodeproj in Xcode. | Unity Framework Setup . Check Unity-iPhone presence: . | If Unity-iPhone is expandable in the project navigator, skip to step 4 | If not expandable, remove the reference and proceed to step 4 | . | Import Unity Project . Drag Unity-iPhone.xcodeproj from Builds/iOS/ folder into your Xcode project. Configure frameworks: . | Re-import the UnityFramework.framework library in Xcode | Select the Data folder and check the Target Membership box next to UnityFramework | . | Configure Native Plugins . Navigate to Unity-iPhone &gt; Libraries &gt; Plugins &gt; iOS: . Set Target Membership to Public for: . | NativeCallProxy.h | NativeState.h | . Under Target Membership, ensure UnityFramework is set to Public. | Update UnityFramework Header . Add this include statement to the top of the UnityFramework.h file. #include \"NativeCallProxy.h\" . | . Common Issues . | Missing scenes: Ensure only LoadAll scene is included in build | Too little Memory: Sometimes the iOS Build fails because there is too little free memory. Make sure to clean memory inside XCode once in a while | Animations not Working: If we are still using the animation method for loading poses, please go Canvas &gt; SideMenu &gt; Scroll View &gt; Viewport &gt; Content inside the scene, right click on the component Auto Fill Pose(Script) and click on generate pose libraries. | . ",
     "url": "/miko-unity-docs/docs/deployment/#ios-deployment",
     
     "relUrl": "/docs/deployment/#ios-deployment"
-  },"222": {
+  },"223": {
     "doc": "Hand Editor",
     "title": "Hand Editor",
     "content": "Advanced hand pose editing system for precise finger and thumb positioning. ",
     "url": "/miko-unity-docs/docs/Topics/hand_editor/",
     
     "relUrl": "/docs/Topics/hand_editor/"
-  },"223": {
+  },"224": {
     "doc": "Hand Editor",
     "title": "Overview",
     "content": "Hand Editor is a window that is initialised inside the scene. It can edit the hand position to three finished states: Closed, Open-wide and Open-narrow. You can view the prefab in Scenes/Hand Editor. The Hand Editor Prefab can be acccessed in Prefabs/UI Prefabs. In the main scene LoadAll, it is added to Canvas and disabled(Left). Inside a button component PC/Hand Editor, the script Open Hand Editor is attached to the button that manages the opening and closing of the window (Right). Please apply any changes to the Hand Editor to the Hand editor prefab inside the prefab table! This is to ensure that any changes are immediately reflected in the main scene. ",
     "url": "/miko-unity-docs/docs/Topics/hand_editor/#overview",
     
     "relUrl": "/docs/Topics/hand_editor/#overview"
-  },"224": {
+  },"225": {
     "doc": "Hand Editor",
     "title": "Related Classes",
     "content": "Class: OpenHandEditor Class: Hand Window Drag Class: HandSliderDrag Class: HandButtonHandler Class: HandMuscleGroups Class: HandPosing . ",
     "url": "/miko-unity-docs/docs/Topics/hand_editor/#related-classes",
     
     "relUrl": "/docs/Topics/hand_editor/#related-classes"
-  },"225": {
+  },"226": {
     "doc": "Joint Restriction Classes",
     "title": "Joint Restriction Classes",
     "content": "These are the classes involved with restricting joint movements to more human poses . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/",
     
     "relUrl": "/docs/classes/joint_restrictions/"
-  },"226": {
+  },"227": {
     "doc": "Joint Structure Classes",
     "title": "Joint Structure Classes",
     "content": "These are the classes involved with managing the Joint structure and gameobjects . ",
     "url": "/miko-unity-docs/docs/classes/joint_structure/",
     
     "relUrl": "/docs/classes/joint_structure/"
-  },"227": {
+  },"228": {
     "doc": "Rotation Gizmo Classes",
     "title": "Rotation Gizmo Classes",
     "content": "These are the classes involved with rotating the joints(FK). ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/",
     
     "relUrl": "/docs/classes/rotation_gizmo/"
-  },"228": {
+  },"229": {
     "doc": "Camera and Camera Restriction",
     "title": "Camera and Camera Restriction",
     "content": "These are the classes involved with Camera and Camera Restrictions. ",
     "url": "/miko-unity-docs/docs/classes/camera_movement/",
     
     "relUrl": "/docs/classes/camera_movement/"
-  },"229": {
+  },"230": {
     "doc": "Inverse Kinematics(IK) Classes",
     "title": "Inverse Kinematics(IK) Classes",
     "content": "These are the classes involved with moving hand and leg joints using Inverse Kinematics(IK) . ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/",
     
     "relUrl": "/docs/classes/inverse_kinematics/"
-  },"230": {
+  },"231": {
     "doc": "Blinking Joint Indicator Classes",
     "title": "Blinking Joint Indicator",
     "content": "These are the classes involved with turning on blinking joint indicators. ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/#blinking-joint-indicator",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/#blinking-joint-indicator"
-  },"231": {
+  },"232": {
     "doc": "Blinking Joint Indicator Classes",
     "title": "Blinking Joint Indicator Classes",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/blinking_joint_indicators/",
     
     "relUrl": "/docs/classes/blinking_joint_indicators/"
-  },"232": {
+  },"233": {
     "doc": "Scene Initalisation Classes",
     "title": "Scene Initalisation Classes",
     "content": "These are the classes involved with initalising the scene . ",
     "url": "/miko-unity-docs/docs/classes/scene_initalisation/",
     
     "relUrl": "/docs/classes/scene_initalisation/"
-  },"233": {
+  },"234": {
     "doc": "Posekun Modification Classes",
     "title": "Posekun Modification Classes",
     "content": "These are the classes involved with modifying the posekun in runtime. ",
     "url": "/miko-unity-docs/docs/classes/posekun_modifications/",
     
     "relUrl": "/docs/classes/posekun_modifications/"
-  },"234": {
+  },"235": {
     "doc": "Hand Editor Classes",
     "title": "Hand Editor Classes",
     "content": "These are the classes involved with creating a Hand Editor Window and move the fingers . ",
     "url": "/miko-unity-docs/docs/classes/hand_editor/",
     
     "relUrl": "/docs/classes/hand_editor/"
-  },"235": {
+  },"236": {
     "doc": "Rendering Posekun Classes",
     "title": "Rendering Posekun Classes",
     "content": "These are the classes involved with drawing the pose inside the scene . ",
     "url": "/miko-unity-docs/docs/classes/rendering_posekun/",
     
     "relUrl": "/docs/classes/rendering_posekun/"
-  },"236": {
+  },"237": {
     "doc": "Classes",
     "title": "Classes Documentation",
     "content": "Detailed technical documentation for all C# scripts and classes in the Unity pose manipulation project. ",
     "url": "/miko-unity-docs/docs/classes/#classes-documentation",
     
     "relUrl": "/docs/classes/#classes-documentation"
-  },"237": {
+  },"238": {
     "doc": "Classes",
     "title": "Table of Contents",
     "content": ". | Overview | Scene Initialization | Rendering Posekun | Inverse Kinematics (IK) | Rotation Gizmo (FK) | Joint Structure | Camera Movement &amp; Restriction | Joint Restrictions | Posekun Modifications | Blinking Joint indicators | Hand Editor | Loading Poses | Overview of Current Scripts . | Conceptual Class Diagram | Classes and their public functions | . | . ",
     "url": "/miko-unity-docs/docs/classes/#table-of-contents",
     
     "relUrl": "/docs/classes/#table-of-contents"
-  },"238": {
+  },"239": {
     "doc": "Classes",
     "title": "Overview",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/#overview",
     
     "relUrl": "/docs/classes/#overview"
-  },"239": {
+  },"240": {
     "doc": "Classes",
     "title": "Scene Initialization",
     "content": "BodykunController Class . AddFBXController Class . ",
     "url": "/miko-unity-docs/docs/classes/#scene-initialization",
     
     "relUrl": "/docs/classes/#scene-initialization"
-  },"240": {
+  },"241": {
     "doc": "Classes",
     "title": "Rendering Posekun",
     "content": "DrawPosekun . Colors . DrawLimb . ",
     "url": "/miko-unity-docs/docs/classes/#rendering-posekun",
     
     "relUrl": "/docs/classes/#rendering-posekun"
-  },"241": {
+  },"242": {
     "doc": "Classes",
     "title": "Inverse Kinematics (IK)",
     "content": "Drag Joint (IK) . UpdateHintPositions . ",
     "url": "/miko-unity-docs/docs/classes/#inverse-kinematics-ik",
     
     "relUrl": "/docs/classes/#inverse-kinematics-ik"
-  },"242": {
+  },"243": {
     "doc": "Classes",
     "title": "Rotation Gizmo (FK)",
     "content": "SetTarget . TransformGizmo . ",
     "url": "/miko-unity-docs/docs/classes/#rotation-gizmo-fk",
     
     "relUrl": "/docs/classes/#rotation-gizmo-fk"
-  },"243": {
+  },"244": {
     "doc": "Classes",
     "title": "Joint Structure",
     "content": "Structure . JointLoader . JointManager . ",
     "url": "/miko-unity-docs/docs/classes/#joint-structure",
     
     "relUrl": "/docs/classes/#joint-structure"
-  },"244": {
+  },"245": {
     "doc": "Classes",
     "title": "Camera Movement &amp; Restriction",
     "content": "CameraController . PoseBoundingBox . GridController . EnableCamera . ScreenshotController . ",
     "url": "/miko-unity-docs/docs/classes/#camera-movement--restriction",
     
     "relUrl": "/docs/classes/#camera-movement--restriction"
-  },"245": {
+  },"246": {
     "doc": "Classes",
     "title": "Joint Restrictions",
     "content": "JointRestrictionManager . JointRestrictionLimits . RotationJointRestriction . IKJointRestriction . ",
     "url": "/miko-unity-docs/docs/classes/#joint-restrictions",
     
     "relUrl": "/docs/classes/#joint-restrictions"
-  },"246": {
+  },"247": {
     "doc": "Classes",
     "title": "Posekun Modifications",
     "content": "AdjustModel . ",
     "url": "/miko-unity-docs/docs/classes/#posekun-modifications",
     
     "relUrl": "/docs/classes/#posekun-modifications"
-  },"247": {
+  },"248": {
     "doc": "Classes",
     "title": "Blinking Joint indicators",
     "content": "SwiftControls . StoreOriginalJointForIndicators . RootWebGL . ",
     "url": "/miko-unity-docs/docs/classes/#blinking-joint-indicators",
     
     "relUrl": "/docs/classes/#blinking-joint-indicators"
-  },"248": {
+  },"249": {
     "doc": "Classes",
     "title": "Hand Editor",
     "content": "OpenHandEditor . Hand Window Drag . HandSliderDrag . HandButtonHandler . HandMuscleGroups . HandPosing . ",
     "url": "/miko-unity-docs/docs/classes/#hand-editor",
     
     "relUrl": "/docs/classes/#hand-editor"
-  },"249": {
+  },"250": {
     "doc": "Classes",
     "title": "Loading Poses",
     "content": "Loading Poses . ",
     "url": "/miko-unity-docs/docs/classes/#loading-poses",
     
     "relUrl": "/docs/classes/#loading-poses"
-  },"250": {
+  },"251": {
     "doc": "Classes",
     "title": "Overview of Current Scripts",
     "content": "This is for a general overview of the entire Unity system. Conceptual Class Diagram . classDiagram %% MAIN SYSTEM ENTRY class BodykunController { controls the pose system delegates loading and animation } class AddFBXController { sets up models and dependencies } class CameraController { handles input and camera movement } class ScreenshotController { handles pose capture and data export } %% LOADERS class BodykunLoader { &lt;&lt;abstract&gt;&gt; loads poses } class BodykunWebGLLoader class BodykunSwiftLoader %% ANIMATION / RIGGING class AnimationController { applies pose animations } class HandPosing { controls finger muscle movement } %% JOINT SYSTEM class JointLoader { initializes joint GameObjects } class JointManager { tracks and manages joints } class SetTarget { enables transform gizmos } %% STRUCTURE &amp; UTILITIES class Structure { &lt;&lt;static&gt;&gt; stores joint mappings } class DrawPosekun { draws visual skeleton } class AdjustModel { scales and normalizes model pose } class PoseBoundingBox { calculates screen space bounds } %% RELATIONSHIPS (ABSTRACTED) BodykunController --&gt; AddFBXController BodykunController --&gt; BodykunLoader BodykunController --&gt; AnimationController BodykunController --&gt; HandPosing BodykunController --&gt; ScreenshotController BodykunLoader &lt;|-- BodykunWebGLLoader BodykunLoader &lt;|-- BodykunSwiftLoader AddFBXController --&gt; JointLoader AddFBXController --&gt; AnimationController AddFBXController --&gt; HandPosing AddFBXController --&gt; PoseBoundingBox AddFBXController --&gt; Structure ScreenshotController --&gt; Structure CameraController --&gt; PoseBoundingBox JointLoader --&gt; JointManager JointLoader --&gt; SetTarget SetTarget --&gt; DrawPosekun JointManager --&gt; Structure HandPosing --&gt; Structure . Classes and their public functions . | Folder | Class Name | Description | Documentation | . | ../RuntimeGizmo | TransformGizmo | Draws the Transform Gizmo that we use | Poser Documentation: TransformGizmo | . | . | BodykunController | Manages the main body model and its interactions. | Poser Documentation: BodykunController | . | ./Camera | CameraController | Handles camera movement, rotation, and zoom. | Class: CameraController | . | ./Camera | EnableCamera | Enables or disables camera functionality. | Class: EnableCamera | . | ./Camera | GridController | Manages the grid visualization in the scene. | Class: GridController | . | ./Camera | PoseBoundingBox | Calculates and manages the bounding box for poses. | Class: PoseBoundingBox | . | ./Camera | ScreenshotController | Captures screenshots of the current scene or model. | Class: ScreenshotController | . | ./PoseLoader | AddFBXController | Adds and configures FBX models, including joints and animations. | Poser Documentation: AddFBXController | . | ./PoseLoader | BodykunLoader | Loads the Bodykun model into the scene. |   | . | ./PoseLoader | BodykunSwiftLoader | Loads Bodykun models with Swift integration. |   | . | ./PoseLoader | BodyKunWebGLLoader | Loads Bodykun models for WebGL platforms. |   | . | PoseLoader/HandPosing | HandMuscleGroups | Manages muscle groups for hand posing. | Class: HandMuscleGroups | . | PoseLoader/HandPosing | HandPosing | Handles hand posing and adjustments. | Class: HandPosing | . | PoseLoader/Animations | AnimationController | Controls animations for the model. |   | . | PoseLoader/Joints | JointLoader | Loads joint data for the model. | Poser Documentation: JointLoader | . | PoseLoader/Joints | JointManager | Manages joint interactions and constraints. | Poser Documentation: JointManager | . | PoseLoader/Joints | SetTarget | Sets target positions for joints. | Poser Documentation: SetTarget | . | Joints/JointRestrictions | IKJointRestriction | Applies inverse kinematics (IK) restrictions to joints. | Class: IKJointRestriction | . | Joints/JointRestrictions | RotationJointRestriction | Restricts joint rotation to specified limits. | Class: RotationJointRestriction | . | Joints/JointRestrictions | JointRestrictionManager | Monitors and controls all Rotation and IK Joint Restrictions | Class: JointRestrictionManager | . | Joints/JointRestrictions | JointRestrictionLimits | Defines limits for both Rotation and IK Joint Restrictons | Class: JointRestrictionLimits | . | Joints/IKJoints | DragJoint | Attach to Game Object to be able to drag it | Poser Documentation: Drag Joint (IK) | . | Joints/IKJoints | UpdateHintPositions | Updates hint positions that will be used for the IK system | Poser Documentation: UpdateHintPositions | . | Joints/DrawJoints | DrawLimb | Handles updating the setting the color of each bone, drawing the bone and updating its position when joint moves | Poser Documentation: DrawLimb | . | Joints/DrawJoints | DrawPosekun | Supervises DrawLimb and toggles Body mesh/limb visualisation | Poser Documentation: DrawPosekun | . | ./utils | AdjustModel | Handles scaling and adjustments of body parts. | Class: AdjustModel | . | ./utils | Colors | Provides color utilities for the project. | Poser Documentation: Colors | . | ./utils | Structure | Manages the structure and hierarchy of joints. | Poser Documentation: Structure | . | ./utils | PoseLibrary | Manages a library of poses. |   | . | utils/Indicators | SwiftControls | Integrates with iOS Swift for joint and pose management. | Class: SwiftControls | . | utils/Indicators | StoreOriginalJointForIndicators | Stores original joint positions for indicators. | Class: StoreOriginalJointForIndicators | . | utils/Swift | NativeStateManager | Synchronizes state between Unity and native platforms. |   | . | utils/Swift | RootBehavior | Manages root-level behaviors for the application. |   | . | utils/UI | AutoFillPose | Automates loading and management of pose thumbnails and animations. |   | . | utils/UI | GenerateCsv | Generates CSV files for exporting pose or model data. |   | . | utils/UI | PoseButtonController | Manage pose selection buttons in the UI. |   | . | utils/UI | ResizeWindow | Handles resizing UI windows. |   | . | utils/UI | SideMenuController | Manages the side menu UI interactions. |   | . | UI/HandEditor | OpenHandEditor | Provides tools for editing hand poses. | Class: OpenHandEditor | . | UI/HandEditor | HandWindowDrag | Handles drag interactions for hand sliders in the UI. | Class: Hand Window Drag | . | UI/HandEditor | HandSliderDrag | Manages slider interactions for hand adjustments. | Class: HandSliderDrag | . | UI/HandEditor | HandButtonHandler | Handles button interactions for hand editing. | Class: HandButtonHandler | . | utils/WebGL | RootWebGL | Provides WebGL-specific functionality, such as displaying poses. | Class: RootWebGL | . ",
     "url": "/miko-unity-docs/docs/classes/#overview-of-current-scripts",
     
     "relUrl": "/docs/classes/#overview-of-current-scripts"
-  },"251": {
+  },"252": {
     "doc": "Classes",
     "title": "Classes",
     "content": " ",
     "url": "/miko-unity-docs/docs/classes/",
     
     "relUrl": "/docs/classes/"
-  },"252": {
+  },"253": {
     "doc": "Topics",
     "title": "Topics",
     "content": "Here we cover majority of all topics related to Unity. If there is any questions, please refer here under the relevant topic section first. | Scene Initialization - How the LoadAll scene is set up and initialised . | Rendering Posekun - Understanding the pose visualisation character rendering . | Inverse Kinematics - IK system for natural pose manipulation . | Rotation Gizmo (FK) - 3D rotation manipulation tools . | Joint Structure - Bone hierarchy and joint organisation . | Loading Poses - Pose data loading, management, and application . | Camera Movement &amp; Restriction - Camera controls and navigation . | Joint Restriction - Anatomical joint limitations and constraints . | Posekun Modifications - Customising the pose character . | Blinking Indicators - Interactive pose point visualisation . | Layers and Tags - Unity layer system and object tagging . | Hand Editor - Hand pose editing interface and controls . | . ",
     "url": "/miko-unity-docs/docs/Topics/",
     
     "relUrl": "/docs/Topics/"
-  },"253": {
+  },"254": {
     "doc": "Home",
     "title": "Have fun with Unity",
     "content": "This Unity Poser project allows users to pose a pose in 3D space and AI generate pictures based to the pose. Get started View source code . | Getting started . | Requirements | Installation | Setup Code Editor | . | Open Your First Scene | Explore further | . ",
     "url": "/miko-unity-docs/#have-fun-with-unity",
     
     "relUrl": "/#have-fun-with-unity"
-  },"254": {
+  },"255": {
     "doc": "Home",
     "title": "Getting started",
     "content": "If you are already familiar with Unity and installed the project, skip to here: . Requirements . | Unity Editor + Unity 2022.3.45f1 | Visual Studio Code (or your preferred C# code editor) | . Installation . | Clone or download the project: git clone https://github.com/MikoWorld/miko-unity . This repo is private. Please request access from JiYao or other employees for access . | Add the project to Unity . a. In Unity Hub, click Add project . b. Select the folder: miko-unity/UnityProject . | Install required packages . a. Open the Unity Editor . b. Go to Window → Package Manager . c. Install any missing dependencies listed under “In Project” . | . Setup Code Editor . | Ensure you have Visual Studio Code or its equivalent . | Setting up Recommended Settings in VSCode . a. Create a JSON file at .vscode/settings.json . b. Copy and paste these settings to hide unnecessary files and enable formatting: . { \"files.exclude\": { \"**/*.meta\": true, \"**/*.asset\": true, \"**/*.prefab\": true, \"**/*.unity\": true, \"Library/\": true, \"Temp/\": true, \"obj/\": true, \"Build/\": true, \"ProjectSettings/\": true }, \"dotnet.defaultSolution\": \"UnityProject.sln\", \"C_Cpp.errorSquiggles\": \"disabled\", \"editor.formatOnSave\": true, \"[csharp]\": { \"editor.defaultFormatter\": \"ms-dotnettools.csharp\" } } . | Install the C# Extension in VSCode for better code editing support . | . ",
     "url": "/miko-unity-docs/#getting-started",
     
     "relUrl": "/#getting-started"
-  },"255": {
+  },"256": {
     "doc": "Home",
     "title": "Open Your First Scene",
     "content": "Open and Test Run Scene . | Open the Unity Project inside Unity . | It should look something like this. Check the scene to make sure you have loaded the Main LoadAll Scene. You can change the scene by going into Assets/Scenes and double clicking on LoadAll . | Click the play button at the top once the scene is loaded. | Now the scene is loaded and you can move the body! . | . ",
     "url": "/miko-unity-docs/#open-your-first-scene",
     
     "relUrl": "/#open-your-first-scene"
-  },"256": {
+  },"257": {
     "doc": "Home",
     "title": "Explore further",
     "content": "You may wanna look at these: . ",
     "url": "/miko-unity-docs/#explore-further",
     
     "relUrl": "/#explore-further"
-  },"257": {
+  },"258": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "/miko-unity-docs/",
     
     "relUrl": "/"
-  },"258": {
+  },"259": {
     "doc": "Inverse Kinematics",
     "title": "Inverse Kinematics (IK)",
     "content": "Understanding the IK system that automatically positions joints to achieve natural poses. ",
     "url": "/miko-unity-docs/docs/Topics/inverse_kinematics/#inverse-kinematics-ik",
     
     "relUrl": "/docs/Topics/inverse_kinematics/#inverse-kinematics-ik"
-  },"259": {
+  },"260": {
     "doc": "Inverse Kinematics",
     "title": "Table of Contents",
     "content": ". | Overview | Disabling / Enabling IK | IK Setup (in AddFBXController) | Overall Flow | Related Classes | . ",
     "url": "/miko-unity-docs/docs/Topics/inverse_kinematics/#table-of-contents",
     
     "relUrl": "/docs/Topics/inverse_kinematics/#table-of-contents"
-  },"260": {
+  },"261": {
     "doc": "Inverse Kinematics",
     "title": "Overview",
     "content": "IK is implemented for both arms and legs using Unity’s RigBuilder and Two Bone IK Constraint. Within the IK system, the target (item at the end of the limb) and hint objects (item that that elbow points towards) are required to ensure the system is fully working. However, the current IK setup simply sets the hint weights very low, so the hints don’t affect the IK much. “Currently, the settings used in the above sets the value of the Hint Weight to be low to ensure that when we use our rotation gizmo or make changes to posekun without the IK system, these changes are retained instead of being overridden. However, take note that the lower the hint weight, the lesser the arm or leg will bend towards the hint object, which may lead to less realistic limb movement.” - January 2025 Documentation YouTube video with the same IK setup: Inverse Kinematics Unity Tutorial in 3 minutes . ",
     "url": "/miko-unity-docs/docs/Topics/inverse_kinematics/#overview",
     
     "relUrl": "/docs/Topics/inverse_kinematics/#overview"
-  },"261": {
+  },"262": {
     "doc": "Inverse Kinematics",
     "title": "Disabling / Enabling IK",
     "content": "RigBuilder must be enabled for IK to function. However, it prevents FK (directly rotating the joint). Thus, RigBuilder component is disabled, and only enabled when the user is holding down the mouse on a movable IK target (the hands and feet joints). ",
     "url": "/miko-unity-docs/docs/Topics/inverse_kinematics/#disabling--enabling-ik",
     
     "relUrl": "/docs/Topics/inverse_kinematics/#disabling--enabling-ik"
-  },"262": {
+  },"263": {
     "doc": "Inverse Kinematics",
     "title": "IK Setup (in AddFBXController)",
     "content": "IK is setup at the start of the scene, by AddFBXController in the AddRig() and TwoBoneIKSetup() functions. Poser Documentation: AddFBXController . More information on scene startup: Topic: Scene Initialization . ",
     "url": "/miko-unity-docs/docs/Topics/inverse_kinematics/#ik-setup-in-addfbxcontroller",
     
     "relUrl": "/docs/Topics/inverse_kinematics/#ik-setup-in-addfbxcontroller"
-  },"263": {
+  },"264": {
     "doc": "Inverse Kinematics",
     "title": "Overall Flow",
     "content": ". ",
     "url": "/miko-unity-docs/docs/Topics/inverse_kinematics/#overall-flow",
     
     "relUrl": "/docs/Topics/inverse_kinematics/#overall-flow"
-  },"264": {
+  },"265": {
     "doc": "Inverse Kinematics",
     "title": "Related Classes",
     "content": "Poser Documentation: Drag Joint (IK) Poser Documentation: UpdateHintPositions . ",
     "url": "/miko-unity-docs/docs/Topics/inverse_kinematics/#related-classes",
     
     "relUrl": "/docs/Topics/inverse_kinematics/#related-classes"
-  },"265": {
+  },"266": {
     "doc": "Inverse Kinematics",
     "title": "Inverse Kinematics",
     "content": " ",
     "url": "/miko-unity-docs/docs/Topics/inverse_kinematics/",
     
     "relUrl": "/docs/Topics/inverse_kinematics/"
-  },"266": {
+  },"267": {
     "doc": "Joint Restriction",
     "title": "Joint Restriction",
     "content": "Anatomical constraints and limitations that ensure realistic human pose generation. ",
     "url": "/miko-unity-docs/docs/Topics/joint_restriction/",
     
     "relUrl": "/docs/Topics/joint_restriction/"
-  },"267": {
+  },"268": {
     "doc": "Joint Restriction",
     "title": "Overview",
     "content": "Currently, there are rotation restrictions that can be placed on a joint to stop it from rotating in an unnatural way. This prevents the creation of poses that don’t make sense. Restrictions can be added in Class: JointRestrictionLimits. ",
     "url": "/miko-unity-docs/docs/Topics/joint_restriction/#overview",
     
     "relUrl": "/docs/Topics/joint_restriction/#overview"
-  },"268": {
+  },"269": {
     "doc": "Joint Restriction",
     "title": "Related Classes",
     "content": "Class: JointRestrictionManager Class: JointRestrictionLimits Class: RotationJointRestriction Class: IKJointRestriction . ",
     "url": "/miko-unity-docs/docs/Topics/joint_restriction/#related-classes",
     
     "relUrl": "/docs/Topics/joint_restriction/#related-classes"
-  },"269": {
+  },"270": {
     "doc": "Joint Structure",
     "title": "Joint Structure",
     "content": "Understanding the hierarchical bone system and joint organization used for pose manipulation. ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/",
     
     "relUrl": "/docs/Topics/joint_structure/"
-  },"270": {
+  },"271": {
     "doc": "Joint Structure",
     "title": "Overview",
     "content": "The joint structure is based on that of the FBX model (Bodykun). The current Bodykun has joints that are named in Japanese using the MMD format. Under each (movable) joint, there is a child with the English name, that contains a collider + the scripts needed such as PoseLoader, etc. ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#overview",
     
     "relUrl": "/docs/Topics/joint_structure/#overview"
-  },"271": {
+  },"272": {
     "doc": "Joint Structure",
     "title": "Related Classes",
     "content": "Poser Documentation: Structure Poser Documentation: JointLoader Poser Documentation: JointManager &lt;!– The joint structure forms the backbone of the pose manipulation system. It defines how bones are connected, how they move in relation to each other, and provides the foundation for realistic human pose creation. ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#related-classes",
     
     "relUrl": "/docs/Topics/joint_structure/#related-classes"
-  },"272": {
+  },"273": {
     "doc": "Joint Structure",
     "title": "Hierarchical Organization",
     "content": "Root Structure . The character’s joint hierarchy follows anatomical organization: . Root (Hip/Pelvis) ├── Spine │ ├── Chest │ │ ├── Neck │ │ │ └── Head │ │ ├── Left Shoulder │ │ │ └── Left Arm Chain │ │ └── Right Shoulder │ │ └── Right Arm Chain ├── Left Hip │ └── Left Leg Chain └── Right Hip └── Right Leg Chain . Joint Naming Convention . Joints follow a consistent naming pattern: . | Prefix: Body side (L/R for Left/Right, or none for center) | Body Part: Descriptive name (Shoulder, Elbow, Knee, etc.) | Suffix: Joint type or position when applicable | . ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#hierarchical-organization",
     
     "relUrl": "/docs/Topics/joint_structure/#hierarchical-organization"
-  },"273": {
+  },"274": {
     "doc": "Joint Structure",
     "title": "Major Joint Groups",
     "content": "Spine Chain . Purpose: Core body movement and posture . | Hip/Root: Foundation joint for entire character | Spine: Lower back flexibility | Chest: Upper torso rotation and bending | Neck: Head orientation support | Head: Final orientation point | . Arm Chains (Left/Right) . Purpose: Upper limb manipulation . | Shoulder: Arm attachment and lifting | Upper Arm: Major arm rotation | Elbow: Arm bending joint | Forearm: Wrist rotation support | Wrist: Hand attachment point | Hand: Finger base connection | . Leg Chains (Left/Right) . Purpose: Lower limb and locomotion . | Hip: Leg attachment and lifting | Upper Leg: Major leg rotation | Knee: Leg bending joint | Lower Leg: Ankle rotation support | Ankle: Foot attachment point | Foot: Ground connection and balance | . ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#major-joint-groups",
     
     "relUrl": "/docs/Topics/joint_structure/#major-joint-groups"
-  },"274": {
+  },"275": {
     "doc": "Joint Structure",
     "title": "Joint Properties",
     "content": "Transform Components . Each joint contains essential transform data: . public class Joint { public Vector3 position; // 3D world position public Quaternion rotation; // 3D rotation public Vector3 scale; // Joint scaling (usually uniform) public Transform parent; // Parent joint reference public List&lt;Transform&gt; children; // Child joints } . Joint Constraints . Joints have anatomical limitations: . | Rotation Limits: Maximum/minimum rotation angles | Axis Restrictions: Which axes can rotate | Dependency Rules: How child joints are affected by parents | . Movement Types . Different joints support different movement types: . | Joint Type | Rotation Axes | Example Joints | . | Ball Joint | X, Y, Z | Shoulder, Hip | . | Hinge Joint | Single Axis | Elbow, Knee | . | Pivot Joint | Single Rotation | Neck, Wrist | . | Fixed Joint | No Movement | Rigid connections | . ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#joint-properties",
     
     "relUrl": "/docs/Topics/joint_structure/#joint-properties"
-  },"275": {
+  },"276": {
     "doc": "Joint Structure",
     "title": "Joint Management System",
     "content": "JointManager Script . Central controller for joint operations: . // Key responsibilities: - Joint hierarchy maintenance - Constraint enforcement - Position/rotation updates - Parent-child relationship management . JointLoader Script . Handles joint data loading and initialization: . | Loads joint definitions from data files | Establishes parent-child relationships | Applies initial joint constraints | Sets up joint visualization | . ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#joint-management-system",
     
     "relUrl": "/docs/Topics/joint_structure/#joint-management-system"
-  },"276": {
+  },"277": {
     "doc": "Joint Structure",
     "title": "Joint Manipulation",
     "content": "Direct Manipulation . Joints can be directly manipulated through: . | Mouse dragging: Direct joint positioning | Transform gizmos: Precise rotation control | Keyboard shortcuts: Quick adjustments | Value input: Exact numerical positioning | . Inverse Kinematics (IK) . Automatic joint positioning through IK solving: . // Example: Position hand, automatically adjust arm joints IKSolver.SetTargetPosition(handJoint, targetPosition); IKSolver.Solve(); // Calculates elbow and shoulder positions . Forward Kinematics (FK) . Manual joint-by-joint positioning: . | Move parent joints to affect children | Build poses from core outward | Full control over each joint angle | . ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#joint-manipulation",
     
     "relUrl": "/docs/Topics/joint_structure/#joint-manipulation"
-  },"277": {
+  },"278": {
     "doc": "Joint Structure",
     "title": "Joint Visualization",
     "content": "Joint Indicators . Visual representation system: . | Indicator Prefab: Standard joint visualization marker | JointIndicators Prefab: Animated feedback for active joints | Color Coding: Different colors for different joint types | Size Scaling: Joint importance indicated by marker size | . Selection Feedback . When joints are selected: . | Highlight Effect: Selected joint stands out visually | Gizmo Display: Rotation/position gizmos appear | Information Panel: Joint properties shown in UI | . ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#joint-visualization",
     
     "relUrl": "/docs/Topics/joint_structure/#joint-visualization"
-  },"278": {
+  },"279": {
     "doc": "Joint Structure",
     "title": "Data Structure",
     "content": "Joint Definition Format . Joints are defined using structured data: . { \"name\": \"LeftShoulder\", \"parent\": \"Chest\", \"position\": [0.2, 1.4, 0.0], \"rotation\": [0, 0, 0], \"constraints\": { \"minRotation\": [-45, -180, -90], \"maxRotation\": [180, 45, 90] } } . Runtime Joint Data . During execution, joints maintain: . | Current transform state | Reference to original bind pose | Constraint information | Parent/child relationships | Visualization components | . ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#data-structure",
     
     "relUrl": "/docs/Topics/joint_structure/#data-structure"
-  },"279": {
+  },"280": {
     "doc": "Joint Structure",
     "title": "Performance Optimization",
     "content": "Joint Culling . Optimize performance by: . | LOD System: Reduce joint detail at distance | Frustum Culling: Hide joints outside camera view | Update Frequency: Reduce update rate for distant joints | . Constraint Caching . | Pre-calculate constraint boundaries | Cache frequently accessed joint relationships | Batch joint updates when possible | . ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#performance-optimization",
     
     "relUrl": "/docs/Topics/joint_structure/#performance-optimization"
-  },"280": {
+  },"281": {
     "doc": "Joint Structure",
     "title": "Troubleshooting",
     "content": "Broken Joint Hierarchy . | Symptom: Child joints not following parents | Solution: Verify parent-child relationships in JointManager | Prevention: Don’t manually modify joint parents at runtime | . Joint Constraint Violations . | Symptom: Unnatural joint positions | Solution: Enable constraint enforcement in JointManager | Debug: Check joint rotation limits are properly set | . Missing Joint Visualizations . | Symptom: Joints not visible in scene | Solution: Verify Indicator prefabs are assigned | Check: Joint visualization layer is visible in camera | . For information about joint constraints and limitations, see Joint Restriction. For IK implementation details, see Inverse Kinematics. –&gt; . ",
     "url": "/miko-unity-docs/docs/Topics/joint_structure/#troubleshooting",
     
     "relUrl": "/docs/Topics/joint_structure/#troubleshooting"
-  },"281": {
+  },"282": {
     "doc": "Layers and Tags",
     "title": "Layers and Tags",
     "content": "Unity’s layer and tag system organization for efficient rendering and object management. ",
     "url": "/miko-unity-docs/docs/Topics/layers_and_tags/",
     
     "relUrl": "/docs/Topics/layers_and_tags/"
-  },"282": {
+  },"283": {
     "doc": "Layers and Tags",
     "title": "Overview",
     "content": "Since the previous design of the bodykun was in editor rather than during Runtime initialisation, there are a few places where layers and tags are necessary to function. This will be a simple introduction of these areas. ",
     "url": "/miko-unity-docs/docs/Topics/layers_and_tags/#overview",
     
     "relUrl": "/docs/Topics/layers_and_tags/#overview"
-  },"283": {
+  },"284": {
     "doc": "Layers and Tags",
     "title": "Introduction to Current Layers and Tags",
     "content": "Layers: . Skeleton: Posekun objects will be added to this layer so that it can be rendered using the posekunCamera IKJoints: used for all IK target objects in the Rig HandTransform: used in RestrictionAndHandAnimation scene. All finger joint GameObjects are assigned to this layer. This layer is utilized to disable rotation gizmo for the finger object. If you want to tune the finger joints with transform gizmo, set their layer to default. Tags: . Within this unity project, the above tags have been added for use if necessary. Currently, the only tags that are utilized during runtime as checking conditions are leftFingers and rightFingers. They are used in Drawlimb and DrawPosekun in order to change the way finger joints are drawn. For the sake of convenience when initialising bodykun during runtime(and the fact that right and left are the same), all of the hand joints inside Structure.isFinger are tagged as “leftFingers”. ",
     "url": "/miko-unity-docs/docs/Topics/layers_and_tags/#introduction-to-current-layers-and-tags",
     
     "relUrl": "/docs/Topics/layers_and_tags/#introduction-to-current-layers-and-tags"
-  },"284": {
+  },"285": {
     "doc": "Layers and Tags",
     "title": "Joint Selection:",
     "content": "Within the TransformGizmo script, there is a function GetTarget() which will check for inputs on the layers specified in the SelectionMask property. If the script detects a touch on a joint (a collider is required for touch detection), we will set that joint to be the joint to apply the rotation gizmo to. Ensure that Layer is set to those in the Selection Mask. ",
     "url": "/miko-unity-docs/docs/Topics/layers_and_tags/#joint-selection",
     
     "relUrl": "/docs/Topics/layers_and_tags/#joint-selection"
-  },"285": {
+  },"286": {
     "doc": "Layers and Tags",
     "title": "Camera rendering objects:",
     "content": "Ensure that the Culling Mask property of the mainCamera includes all layers that we want to render into the scene. If the layer is not added, the camera will not render objects on that layer. However, as seen in the above image, the Skeleton layer is not selected in the culling mask for the main camera. This is because all objects in the skeleton layer are instead rendered on a separate camera. As seen, posekunCamera is the one responsible for rendering posekun onto the scene. The reason why there are 2 cameras used in this setup is to ensure that posekun will always render on top of other objects. This is especially important since bodykun needs to be displayed on screen with posekun as well. In the event that more objects need to be rendered into the scene at different depths, this camera setup can be replicated and modified to easily set the render order. ",
     "url": "/miko-unity-docs/docs/Topics/layers_and_tags/#camera-rendering-objects",
     
     "relUrl": "/docs/Topics/layers_and_tags/#camera-rendering-objects"
-  },"286": {
+  },"287": {
     "doc": "Loading Poses",
     "title": "Loading Poses",
     "content": "Learn how to load, manage, and apply pose data from various sources including CSV files, animation clips, and external pose libraries. ",
     "url": "/miko-unity-docs/docs/Topics/loading_poses/",
     
     "relUrl": "/docs/Topics/loading_poses/"
-  },"287": {
+  },"288": {
     "doc": "Loading Poses",
     "title": "Overview",
     "content": " ",
     "url": "/miko-unity-docs/docs/Topics/loading_poses/#overview",
     
     "relUrl": "/docs/Topics/loading_poses/#overview"
-  },"288": {
+  },"289": {
     "doc": "Project Overview",
     "title": "Project Overview",
     "content": "This documentation provides a comprehensive overview of the Unity project structure and the key GameObjects in the main LoadAll scene. ",
     "url": "/miko-unity-docs/docs/overview/",
     
     "relUrl": "/docs/overview/"
-  },"289": {
+  },"290": {
     "doc": "Project Overview",
     "title": "Table of Contents",
     "content": ". | Project Structure | LoadAll Scene Overview . | Scene Hierarchy | Core GameObjects Overview | Core GameObjects . | Root | Directional Light | EventSystem | . | Camera System . | CameraParent | mainCamera | PosekunCamera | . | User Interface . | Canvas | SideMenu | PC | . | Interactive Elements . | HandEditorContents | Indicator | JointIndicators | . | . | Development Notes . | Important Prefab Dependencies | Debug Elements | . | Next Steps | . ",
     "url": "/miko-unity-docs/docs/overview/#table-of-contents",
     
     "relUrl": "/docs/overview/#table-of-contents"
-  },"290": {
+  },"291": {
     "doc": "Project Overview",
     "title": "Project Structure",
     "content": "The Unity project follows a well-organized folder structure designed for pose manipulation and 3D character interaction: . UnityProject/ │ ├── Assets/ │ ├── Animations/ # Character pose animations │ │ └── PoseManiacs/ # Pre-built pose animations from PoseManiacs │ │ │ ├── CSV/ # 2D pose data for front-end integration │ │ ├── Old/ # Legacy CSV files (deprecated) │ │ └── Posemaniacs/ # PoseManiacs 2D coordinate data │ │ │ ├── Editor/ # Custom Unity Editor scripts and tools │ │ │ ├── Materials/ # Rendering materials │ │ └── HandEditorSprites/ # UI sprite materials for hand editor │ │ │ ├── Models/ # 3D character models (.fbx, .obj, etc.) │ │ │ ├── Plugins/ # Platform-specific plugins │ │ ├── iOS/ # iOS build dependencies │ │ └── WebGL/ # WebGL build dependencies │ │ │ ├── Prefabs/ # Reusable GameObject templates │ │ └── UI Prefabs/ # User interface prefabs (windows, buttons) │ │ │ ├── Resources/ # Runtime-loaded assets (PoseLibrary with AnimationClips) │ ├── Scenes/ # Unity scene files │ └── Scripts/ # C# scripts for game logic │ ├── Builds/ # Compiled application outputs │ ├── iOS/ # iOS build artifacts │ └── WebGL/ # WebGL build artifacts . ",
     "url": "/miko-unity-docs/docs/overview/#project-structure",
     
     "relUrl": "/docs/overview/#project-structure"
-  },"291": {
+  },"292": {
     "doc": "Project Overview",
     "title": "LoadAll Scene Overview",
     "content": "The LoadAll scene contains the core GameObjects that power the pose manipulation system. Each GameObject serves a specific purpose in the application’s functionality. Scene Hierarchy . | | | . | Scene hierarchy overview | Inspector panel details | . You can explore each GameObject using Unity’s Inspector panel (shown on the right) to view their components and configuration. Core GameObjects Overview . The table below provides an overview of the core GameObjects in the LoadAll scene. Click on the links to jump to their detailed descriptions. | GameObject | Purpose | Link | . | Root | Central controller that manages scene-wide functionality and coordinates between systems. | View Details | . | Directional Light | Provides global directional lighting to simulate sunlight and ensure proper scene illumination. | View Details | . | EventSystem | Handles all UI interactions, mouse events, and touch input. | View Details | . | CameraParent | Parent container for camera hierarchy, enabling grouped camera movements and transformations. | View Details | . | mainCamera | Primary scene camera responsible for rendering the main view. | View Details | . | PosekunCamera | Specialized camera dedicated to rendering the pose reference character (Posekun). | View Details | . Core GameObjects . Root . Purpose: Central controller that manages scene-wide functionality and coordinates between different systems. Key Components: . | Enable Camera Script - Controls camera activation states | Root Behaviour Script - Main application logic controller | Root WebGL Script - WebGL-specific functionality | AdjustModel Script - Model transformation and scaling | Draw Posekun Script - Renders the pose visualization character | Screenshot Controller Script - Handles screenshot capture functionality | Add FBX Controller Script - Manages FBX model import and integration | Bodykun Controller Script - Controls the main character body manipulation | . Directional Light . Purpose: Provides global directional lighting to simulate sunlight and ensure proper scene illumination. Key Components: . | Light (Type: Directional) - Main lighting source for the scene | . EventSystem . Purpose: Unity’s input management system that handles all UI interactions, mouse events, and touch input. Key Components: . | EventSystem - Core input event detection and processing | StandaloneInputModule - Handles keyboard, mouse, and controller input for desktop platforms | . Camera System . CameraParent . Purpose: Parent container for camera hierarchy, enabling grouped camera movements and transformations. Key Components: . | Camera Controller Script - Manages camera movement, rotation, and zoom | Pose Bounding Box Script - Calculates and displays pose boundaries | . mainCamera . Purpose: Primary scene camera responsible for rendering the main view and supporting transform gizmo interactions. Key Components: . | Camera - Unity’s camera component for scene rendering | Transform Gizmo Script - Enables 3D manipulation gizmos for object transformation | . PosekunCamera . Purpose: Specialized camera dedicated to rendering the pose reference character (Posekun). Key Components: . | Camera - Secondary camera for pose character rendering | . User Interface . Canvas . Purpose: Root container for all UI elements, providing the foundation for the user interface system. SideMenu . Purpose: Debug panel that displays available poses in a scrollable menu format. Note: Primarily used for development and debugging purposes. Contains script to autopopulate PoseLibrary. PC . Purpose: Desktop-style UI panel containing various control buttons and options. Note: Primarily used for development and debugging purposes. Interactive Elements . HandEditorContents . Purpose: Prefab container for the hand pose editing interface. Important: Keep this GameObject inactive until needed for hand editing functionality. Indicator . Purpose: Template prefab for pose point visualization markers. Critical: This prefab is referenced by multiple systems - do not remove or relocate. JointIndicators . Purpose: Template prefab for animated joint indicators that highlight active pose points. Critical: This prefab is essential for pose point feedback - maintain its position in the hierarchy. ",
     "url": "/miko-unity-docs/docs/overview/#loadall-scene-overview",
     
     "relUrl": "/docs/overview/#loadall-scene-overview"
-  },"292": {
+  },"293": {
     "doc": "Project Overview",
     "title": "Development Notes",
     "content": "Important Prefab Dependencies . | Indicator and JointIndicators prefabs are critical to the pose system. | These prefabs must remain in their current hierarchy positions. | Multiple scripts reference these prefabs at runtime. | . Debug Elements . | SideMenu and PC GameObjects are development tools. | These can be disabled in production builds. | Keep them for testing and debugging pose functionality. | . ",
     "url": "/miko-unity-docs/docs/overview/#development-notes",
     
     "relUrl": "/docs/overview/#development-notes"
-  },"293": {
+  },"294": {
     "doc": "Project Overview",
     "title": "Next Steps",
     "content": "To learn more about the project: . | Explore the Classes documentation for detailed script information. | View Topics for specific feature implementations. | Return to Getting Started for setup instructions. | . ",
     "url": "/miko-unity-docs/docs/overview/#next-steps",
     
     "relUrl": "/docs/overview/#next-steps"
-  },"294": {
+  },"295": {
     "doc": "Posekun Modifications",
     "title": "Posekun Modifications",
     "content": "Learn how to customize the pose reference character (Posekun) including model swapping, material changes, and visual enhancements. ",
     "url": "/miko-unity-docs/docs/Topics/posekun_modifications/",
     
     "relUrl": "/docs/Topics/posekun_modifications/"
-  },"295": {
+  },"296": {
     "doc": "Posekun Modifications",
     "title": "Table of Contents",
     "content": ". | Overview | . ",
     "url": "/miko-unity-docs/docs/Topics/posekun_modifications/#table-of-contents",
     
     "relUrl": "/docs/Topics/posekun_modifications/#table-of-contents"
-  },"296": {
+  },"297": {
     "doc": "Posekun Modifications",
     "title": "Overview",
     "content": "The sizes of different parts of the poser can be changed at runtime. Related Classes Class: AdjustModel . ",
     "url": "/miko-unity-docs/docs/Topics/posekun_modifications/#overview",
     
     "relUrl": "/docs/Topics/posekun_modifications/#overview"
-  },"297": {
+  },"298": {
     "doc": "Rendering Posekun",
     "title": "Rendering Posekun",
     "content": "Understanding how the pose visualization character (Posekun) is rendered and displayed in the scene. ",
     "url": "/miko-unity-docs/docs/Topics/rendering_posekun/",
     
     "relUrl": "/docs/Topics/rendering_posekun/"
-  },"298": {
+  },"299": {
     "doc": "Rendering Posekun",
     "title": "Table of Contents",
     "content": ". | Overview | Related Classes | . ",
     "url": "/miko-unity-docs/docs/Topics/rendering_posekun/#table-of-contents",
     
     "relUrl": "/docs/Topics/rendering_posekun/#table-of-contents"
-  },"299": {
+  },"300": {
     "doc": "Rendering Posekun",
     "title": "Overview",
     "content": "Posekun is a visualization of the joints of Bodykun. It is similar to standard skeletons used by OpenPose and ControlNet. These are the visuals that are fed to the image generation model to control the pose. The Posekun visual joints are parented to a separate gameObject in the scene “Posekun”. Each of them has a Mesh Filter + Mesh Renderer, DrawLimb script and Line Renderer. Using the Line Renderer, a line is drawn from each joint to its parent. Drawing Posekun is mainly handled by calls to the DrawPosekun class. ",
     "url": "/miko-unity-docs/docs/Topics/rendering_posekun/#overview",
     
     "relUrl": "/docs/Topics/rendering_posekun/#overview"
-  },"300": {
+  },"301": {
     "doc": "Rendering Posekun",
     "title": "Related Classes",
     "content": "Poser Documentation: DrawPosekun Poser Documentation: Colors Poser Documentation: DrawLimb . ",
     "url": "/miko-unity-docs/docs/Topics/rendering_posekun/#related-classes",
     
     "relUrl": "/docs/Topics/rendering_posekun/#related-classes"
-  },"301": {
+  },"302": {
     "doc": "Rotation Gizmo",
     "title": "Rotation Gizmo",
     "content": "Interactive 3D rotation tools for precise joint manipulation and pose adjustment. ",
     "url": "/miko-unity-docs/docs/Topics/rotation_gizmo/",
     
     "relUrl": "/docs/Topics/rotation_gizmo/"
-  },"302": {
+  },"303": {
     "doc": "Rotation Gizmo",
     "title": "Overview",
     "content": "The rotation gizmo allows the user to directly rotate the selected joint. https://github.com/HiddenMonk/Unity3DRuntimeTransformGizmo The runtime transform gizmo of this project uses the above plugin by HiddenMonk. SetTarget is mainly used to get the current target for the gizmo. There are also modifications made to TransformGizmo.cs for this project. ",
     "url": "/miko-unity-docs/docs/Topics/rotation_gizmo/#overview",
     
     "relUrl": "/docs/Topics/rotation_gizmo/#overview"
-  },"303": {
+  },"304": {
     "doc": "Rotation Gizmo",
     "title": "Related Classes",
     "content": "Poser Documentation: SetTarget Poser Documentation: TransformGizmo . ",
     "url": "/miko-unity-docs/docs/Topics/rotation_gizmo/#related-classes",
     
     "relUrl": "/docs/Topics/rotation_gizmo/#related-classes"
-  },"304": {
+  },"305": {
     "doc": "Scene Initialization",
     "title": "Scene Initialization",
     "content": "Learn how the LoadAll scene is set up, initialized, and prepared for pose manipulation functionality. ",
     "url": "/miko-unity-docs/docs/Topics/scene_initalisation/",
     
     "relUrl": "/docs/Topics/scene_initalisation/"
-  },"305": {
+  },"306": {
     "doc": "Scene Initialization",
     "title": "Overview",
     "content": "When the Scene initialises, BodykunController is in charge of creating the body and AddFBXController is in charge of setting the GameObject Structure so that we have access to the Joint GameObjects later, and performing additional setup on Bodykun. ",
     "url": "/miko-unity-docs/docs/Topics/scene_initalisation/#overview",
     
     "relUrl": "/docs/Topics/scene_initalisation/#overview"
-  },"306": {
+  },"307": {
     "doc": "Scene Initialization",
     "title": "Related Classes",
     "content": "Poser Documentation: BodykunController Poser Documentation: AddFBXController . ",
