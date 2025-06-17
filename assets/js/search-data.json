@@ -260,14 +260,14 @@
   },"37": {
     "doc": "Class - DragJoint",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "DragJoint is used to enable mouse dragging of the IK target objects (the ones at the hands and feet). Also provides position restriction (position cannot drag out of a certain cuboid volume) if needed. For it to work, some Collider component is needed. { : .text-center} . { : .text-center} . File Location . Assets\\Scripts\\PoseLoader\\Joints\\IKJoints\\DragJoint.cs . ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/DragJoint/#description",
     
     "relUrl": "/docs/classes/inverse_kinematics/DragJoint/#description"
   },"38": {
     "doc": "Class - DragJoint",
     "title": "Serialized Fields",
-    "content": " ",
+    "content": "| Name | Type | Description | . | target | Transform | Origin point of the cuboid used to clamp movement during drag. | . | cuboidDimensions | Vector3 | Width, height, and depth of the clamping cuboid. | . | cuboidOffset | Vector3 | Offset of the cuboid’s origin relative to target. | . | enableCuboidClamp | bool | Enables or disables position clamping to the cuboid during drag. | . | rb | RigBuilder | Reference to the RigBuilder to enable/disable during drag operations. | . ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/DragJoint/#serialized-fields",
     
     "relUrl": "/docs/classes/inverse_kinematics/DragJoint/#serialized-fields"
@@ -1450,35 +1450,35 @@
   },"207": {
     "doc": "Class - UpdateHintPositions",
     "title": "Table of Contents",
-    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods | Usage Notes | . ",
+    "content": ". | Description . | File Location | . | Serialized Fields | Public Methods . | void UpdateHint() | static void UpdateHints() | . | Usage Notes | . ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#table-of-contents",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#table-of-contents"
   },"208": {
     "doc": "Class - UpdateHintPositions",
     "title": "Description",
-    "content": "File Location . ",
+    "content": "This script is added to each hint object. It provides a method to update the hint positions.​ . File Location . Assets\\Scripts\\PoseLoader\\Joints\\IKJoints\\UpdateHintPositions.cs . ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#description",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#description"
   },"209": {
     "doc": "Class - UpdateHintPositions",
     "title": "Serialized Fields",
-    "content": " ",
+    "content": "| Name | Type | Description | . | hintTip | Transform | The end effector of the limb (e.g., hand or foot). | . | hintMid | Transform | The middle joint of the limb (e.g., elbow or knee). | . | hintRoot | Transform | The root joint of the limb (e.g., shoulder or hip). | . ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#serialized-fields",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#serialized-fields"
   },"210": {
     "doc": "Class - UpdateHintPositions",
     "title": "Public Methods",
-    "content": " ",
+    "content": "void UpdateHint() . Updates this hint’s position to align with the bending plane formed by hintTip, hintMid, and hintRoot. | Different bones use different direction heuristics to determine the ideal hint placement. | The new position is projected onto the joint plane to maintain consistent IK behavior. | . static void UpdateHints() . Iterates through all hint objects and updates their positions using their current joint references. ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#public-methods",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#public-methods"
   },"211": {
     "doc": "Class - UpdateHintPositions",
     "title": "Usage Notes",
-    "content": " ",
+    "content": ". | Hint objects are used with Unity’s TwoBoneIKConstrainto to control the elbow/knee direction. | Automatically updates when the user stops dragging a joint (MouseButtonUp). | Call UpdateHints() after large pose changes or scene resets to ensure IK hints remain aligned. | . ",
     "url": "/miko-unity-docs/docs/classes/inverse_kinematics/UpdateHintPositions/#usage-notes",
     
     "relUrl": "/docs/classes/inverse_kinematics/UpdateHintPositions/#usage-notes"
