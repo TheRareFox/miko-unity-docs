@@ -799,7 +799,7 @@
   },"114": {
     "doc": "Class - IKJointRestriction",
     "title": "Serialized Fields",
-    "content": "| Name | Type | Description |———————-|—————|—————————————————————————–| enabled | bool | Whether the restriction is active. | shapeType | ShapeType | Restriction shape (Cone or ReversedCone). | target | Transform | Target transform used as cone apex or origin. | offset | Vector3 | Positional offset from the target. | debugGizmos | bool | Whether to display restriction gizmos. | coneHeight | float | Height of the restriction cone. | coneAngle | float | Angle of the cone in degrees. | coneAxis | Vector3 | Directional axis for the cone (default is forward). | useYAxisCone | bool | Use Y-axis of target or hand to determine cone axis. | isFingers | bool | Whether this restriction is on a finger joint. | isAtEdge | bool | True if joint is close to restriction edge. | fingerOffsetDistance | float | Distance offset from the hand to place the finger constraint point. | hand | Transform | Reference transform of the hand. | . ",
+    "content": "| Name | Type | Description |———————–|—————|—————————————————————————–| enabled | bool | Indicates whether the restriction is active. | shapeType | ShapeType | Specifies the restriction shape (Cone or ReversedCone). | target | Transform | The target transform used as the cone’s apex or origin. | offset | Vector3 | Positional offset relative to the target. | debugGizmos | bool | Determines whether to display debug gizmos for the restriction. | coneHeight | float | The height of the restriction cone. | coneAngle | float | The angle of the cone in degrees. | coneAxis | Vector3 | The directional axis for the cone (default is forward). | useYAxisCone | bool | Specifies whether to use the Y-axis of the target or hand for the cone axis. | isFingers | bool | Indicates whether this restriction applies to a finger joint. | isAtEdge | bool | True if the joint is near the edge of the restriction. | fingerOffsetDistance| float | The distance offset from the hand to position the finger constraint point. | hand | Transform | The reference transform of the hand. | . ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/IKJointRestriction/#serialized-fields",
     
     "relUrl": "/docs/classes/joint_restrictions/IKJointRestriction/#serialized-fields"
@@ -1198,7 +1198,7 @@
   },"171": {
     "doc": "Class - RotationJointRestriction",
     "title": "Serialized Fields",
-    "content": "| Name | Type | Description |——|——|————-| xLowerLimit | float | Minimum allowed rotation (in degrees) on the X-axis. Set to 0 to disable. | xUpperLimit | float | Maximum allowed rotation (in degrees) on the X-axis. Set to 0 to disable. | yLowerLimit | float | Minimum allowed rotation on the Y-axis. | yUpperLimit | float | Maximum allowed rotation on the Y-axis. | zLowerLimit | float | Minimum allowed rotation on the Z-axis. | zUpperLimit | float | Maximum allowed rotation on the Z-axis. | . These are exposed in the editor during playtesting, but are set using the Initalise() function below at runtime. These values are exposed in the editor during playtesting, so developers can easily edit and test them to find the best values for each joint. ",
+    "content": "| Name | Type | Description | . | xLowerLimit | float | Minimum allowed rotation (in degrees) on the X-axis. Set to 0 to disable. | . | xUpperLimit | float | Maximum allowed rotation (in degrees) on the X-axis. Set to 0 to disable. | . | yLowerLimit | float | Minimum allowed rotation on the Y-axis. | . | yUpperLimit | float | Maximum allowed rotation on the Y-axis. | . | zLowerLimit | float | Minimum allowed rotation on the Z-axis. | . | zUpperLimit | float | Maximum allowed rotation on the Z-axis. | . These are exposed in the editor during playtesting, but are set using the Initalise() function below at runtime. These values are exposed in the editor during playtesting, so developers can easily edit and test them to find the best values for each joint. ",
     "url": "/miko-unity-docs/docs/classes/joint_restrictions/RotationJointRestriction/#serialized-fields",
     
     "relUrl": "/docs/classes/joint_restrictions/RotationJointRestriction/#serialized-fields"
@@ -1296,7 +1296,7 @@
   },"185": {
     "doc": "Class - SetTarget",
     "title": "Serialized Fields",
-    "content": "| Name | Type | Description |————————-|————-|—————————————————————————–| rb | RigBuilder | Reference to the rig builder that can be temporarily disabled during interaction. | gameObjectToModifyInstead | GameObject | Target object that will receive gizmo interactions instead of the one this script is attached to. | visualisation | GameObject | Optional prefab used to create a visual representation of the joint. | . ",
+    "content": "| Name | Type | Description |————————–|————–|—————————————————————————–| rb | RigBuilder | Reference to the rig builder that can be temporarily disabled during interaction. | gameObjectToModifyInstead | GameObject | Target object that will receive gizmo interactions instead of the one this script is attached to. | visualisation | GameObject | Optional prefab used to create a visual representation of the joint. | . ",
     "url": "/miko-unity-docs/docs/classes/rotation_gizmo/SetTarget/#serialized-fields",
     
     "relUrl": "/docs/classes/rotation_gizmo/SetTarget/#serialized-fields"
